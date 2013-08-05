@@ -31,11 +31,16 @@ title: Posts
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12 text-center" style="padding-top:20px;">
-				<h1 class="content-title">Connect</h1>
+				<h1 class="content-title">Posts</h1>
 
-				<p class="lead"><a class="redlink" href="https://twitter.com/DesmondDuggan2">Twitter</a></p>
-				<p class="lead"><a class="redlink" href="https://github.com/drduggan">Github</a></p>
-				<p class="lead"><a class="redlink" href="http://www.linkedin.com/pub/desmond-duggan/28/3ab/39a">LinkedIn</a></p>
+				<table class="table ">
+					{% for post in site.posts %}
+					<tr>
+						<td class="dateCol">{{ post.date | date: "%A, %B %d %Y " }}</td>
+						<td> <a href="{{ post.url }}">{{ post.title }} </a></td>
+					</tr>
+					{% endfor %}
+				</table>			
 			</div>
 		</div>
 	</div>
