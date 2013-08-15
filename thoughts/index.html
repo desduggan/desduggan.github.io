@@ -1,0 +1,50 @@
+---
+layout: base
+title: Thoughts
+---
+
+<section class="content">
+
+<section class="right-panel hidden-phone">
+	<div class="container-fluid">
+		<div class="row-fluid top-padding bottom-padding">
+			<div class="span12">
+				<h1 class="content-title">Thoughts</h1>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8 offset1">
+				<table class="table ">
+					{% for post in site.posts %}
+					<tr>
+						<td class="dateCol">{{ post.date | date: "%A, %B %d %Y " }}</td>
+						<td> <a href="{{ post.url }}">{{ post.title }} </a></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bottom-panel visible-phone">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12 right_content_mobile" style="">
+				<h1 class="content-title">Thoughts</h1>
+
+				<table class="table ">
+					{% for post in site.posts %}
+					<tr>
+						<td class="dateCol">{{ post.date | date: "%A, %B %d %Y " }}</td>
+						<td> <a href="{{ post.url }}">{{ post.title }} </a></td>
+					</tr>
+					{% endfor %}
+				</table>			
+			</div>
+		</div>
+	</div>
+</section>
+
+
+</section>

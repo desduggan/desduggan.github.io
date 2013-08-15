@@ -6,7 +6,11 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-	<link href='http://fonts.googleapis.com/css?family=Poiret+One|Ubuntu|Maven+Pro|Oxygen|Open+Sans' rel='stylesheet' type='text/css'>
+
+	<!-- <link href='http://fonts.googleapis.com/css?family=Poiret+One|Ubuntu|Maven+Pro|Oxygen|Open+Sans' rel='stylesheet' type='text/css'> -->
+
+	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+
 
 	<title>  404 - Not Found |  Desmond Duggan </title>
 
@@ -56,86 +60,103 @@
 			padding-bottom: 33px;
 		}
 
-	.nav {
-		text-align: right;
-	}
+		.nav {
+			text-align: right;
+		}
 
-	.top-padding {
-		padding-top: 200px;
-	}
+		.top-padding {
+			padding-top: 200px;
+		}
 
-	.top-padding-mobile {
-		padding-top: 100px;
-	}
+		.top-padding-mobile {
+			padding-top: 100px;
+		}
 
-	.left-panel {
-		width:50%; 
-		height : 100%;  
-		background-color: #e74c3c;
-		float: left;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
+		.left-panel {
+			width:30%; 
+			height : 100%;  
+			background-color: #e74c3c;
+			float: left;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
 
-	.right-panel {
-		width:50%; 
-		height: auto;  
-		float: right;
-		top: 0;
-		left: 50%;
-		padding-bottom: 100px;
-	}
+		.right-panel {
+			width:70%; 
+			height: auto;  
+			float: right;
+			top: 0;
+			left: 50%;
+			padding-bottom: 100px;
+		}
 
-	.top-panel {
-		width: 100%;
-		height: auto;
-		background-color: #e74c3c;
-		float: right;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
+		.top-panel {
+			width: 100%;
+			height: auto;
+			background-color: #e74c3c;
+			float: right;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
 
-	.bottom-panel {
-		width: 100%;
-		padding-top: 200px;
-	}
+		.bottom-panel {
+			width: 100%;
+			padding-top: 200px;
+		}
 
-	.nav-link {
-		color: #ecf0f1;
-	}
+		.right_content_mobile {
+			padding-top:20px;
+			text-align: justify;
+		}
 
-	p > a:hover {
-		text-decoration:none;
-		color: #bdc3c7;
-	}	
+		.nav-link {
+			color: #ecf0f1;
+		}
 
-	li > a:hover {
-		text-decoration:none;
-		color: #bdc3c7;
-	}	
+		p > a:hover {
+			text-decoration:none;
+			color: #bdc3c7;
+		}	
 
-	h1 > a {
-		color: #ecf0f1;
-	}
+		li > a:hover {
+			text-decoration:none;
+			color: #bdc3c7;
+		}	
 
-	h1 > a:hover {
-		text-decoration:none;
-		color: #ecf0f1;
-	}
+		h1 > a {
+			color: #ecf0f1;
+		}
 
-	body {
-		background-color: #ecf0f1;
-	}
+		h1 > a:hover {
+			text-decoration:none;
+			color: #ecf0f1;
+		}
 
-	.content-title {
-		color:#e74c3c;
-	}
+		body {
+			background-color: #ecf0f1;
+		}
 
-	#homepic {
-		width: 200px;
-	}
+		.content-title {
+			color:#e74c3c;
+		}
+
+		#homepic {
+			width: 200px;
+		}
+
+		#homepic-mobile {
+			width: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+
+		.img200 {
+			width:200px; 
+			display:inline-block;
+		}
 
 	</style>
 
@@ -164,11 +185,11 @@
 		<div class="row-fluid">
 			<div class="span5 offset6">
 				<div class="nav">
-					<p class="lead"><a class="nav-link" href="/posts/">Posts</a></p>
+					<p class="lead"><a class="nav-link" href="/thoughts/">Thoughts</a></p>
 					<p class="lead"><a class="nav-link" href="/about/">About</a></p>
 					<p class="lead"><a class="nav-link" href="/cv/">CV</a></p>
 					<p class="lead"><a class="nav-link" href="/connect/">Connect</a></p>
-					<p class="lead"><a class="nav-link" href="/timeline/">Timeline</a></p>
+					<p class="lead"><a class="nav-link" href="/projects/">Projects</a></p>
 				</div>
 			</div>
 		<div>
@@ -185,11 +206,11 @@
 		<div class="row-fluid">
 			<div class="span12 text-center">
 				<ul class="inline">
-					<li><a class="nav-link" href="/posts/">Posts - </a></li>
+					<li><a class="nav-link" href="/thoughts/">Thoughts - </a></li>
 					<li><a class="nav-link" href="/about/">About - </a></li>
  					<li><a class="nav-link" href="/cv/">CV - </a></li>
 					<li><a class="nav-link" href="/connect/">Connect - </a></p></li>
-					<li><a class="nav-link" href="/timeline/">  Timeline</a></p></li>
+					<li><a class="nav-link" href="/projects/">  Projects</a></p></li>
 				</ul>
 			</div>
 		<div>
@@ -202,12 +223,6 @@
 </body>
 
 
-
-
-<!-- Scripts -->
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
-<script type="text/javascript" src="/js/bootstrap.js"></script>
 
 
 </html>
