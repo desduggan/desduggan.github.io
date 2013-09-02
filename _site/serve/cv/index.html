@@ -1,6 +1,36 @@
----
-layout: cvbase
----
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One|Ubuntu|Maven+Pro|Oxygen|Open+Sans' rel='stylesheet' type='text/css'>
+
+	<title> Curriculum Vitae | Desmond Duggan </title>
+
+
+	<style type="text/css">
+		.container {
+			/*font-family: 'Poiret One', cursive;*/
+			/*font-family: 'Ubuntu', sans-serif;*/
+			font-family: 'Maven Pro', sans-serif;
+			/*font-family: 'Oxygen', sans-serif;*/
+			/*font-family: 'Open Sans', sans-serif;*/
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+
+
+	</style>
+</head>
+
+
+<body>
 
 <section class="content">
 
@@ -47,7 +77,7 @@ layout: cvbase
 <section>
 	<div class="row">
 		<div class="page-header">
-			<h2>{{ section.title }}</h2>
+			<h2></h2>
 		</div>
 	</div> <!-- end row -->
 
@@ -90,9 +120,9 @@ layout: cvbase
 <section>
 	<div class="row">
 		<div class="page-header">
-			<h2>Business and Leadership Experience</h2>
+			<h2>Professional and Leadership Experience</h2>
 		</div>
-	</div>
+	</div> <!-- end row -->
 		<div class="row" style="padding: 35px 0 4px 0;">
 			<div class="span8">
 				<h4 style="margin: 0;">Accenture Technology Labs</h4>
@@ -114,36 +144,9 @@ layout: cvbase
 			<div class="span12">
 				<ul>
 					<li>Researched with Accenture's leading technology research group in San Jose, CA. </li>
-					<li>Implemented core features of fully REST compliant web API in JAVA Spring to be used actively by research teams.</li>
-					<li>Evaluated and presented the business gains that can be achieved by the use of an innovative API architecture.</li>
+					<li>Contributed to the development of a fully REST Compliant API. </li>
+					<li>Evaluated and presented the business gains that can be achieved by the use of an API design technique called "hypermedia". </li>
 
-				</ul>
-			</div>	
-		</div>
-
-		<div class="row" style="padding: 35px 0 4px 0;">
-			<div class="span8">
-				<h4 style="margin: 0;">Cultivation Capital</h4>
-			</div>
-			<div class="span4">
-				<h4 class="pull-right hidden-phone" style="margin:0;">St. Louis, MO</h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="span6">
-				<span style="font-style:italic; font-size: 15px;">Analyst</span>
-			</div>	
-			<div class="span6">
-				<span class="visible-phone label">Fall 2013 to Present</span>
-				<span class="hidden-phone pull-right" style="font-style:italic; font-size: 15px;" >Fall 2013 to Present</span>
-			</div>
-		</div> <!-- end row-->
-		<div class="row" style="padding-top: 8px;">
-			<div class="span12">
-				<ul>
-					
-					<li>Investigate investment opportunities in early stage companies to create research package for company partners.</li>
-										
 				</ul>
 			</div>	
 		</div>
@@ -170,13 +173,15 @@ layout: cvbase
 			<div class="span12">
 				<ul>
 					
-					<li>Achievements: Club national championship silver medalist + 2013 All Academic First Team (3.8 GPA).</li>
+					<li>Club national championship silver medalist.</li>
+
+					<li>2013 All Academic First Team. </li>
 
 					<li>Manage and organize the transportation of over $100,000 of equipment 6 times per year. </li>
 					
-					<li>Purchased food for between 40 and 60 people for 2 day overnight trips.</li>
+					<li>Organized the purchase of food for between 40 and 60 people for 2 day overnight trips. </li>
 					
-					<li>Committed to an 8 month training cycle, 35 hours per week, practices at 5am.</li>
+					<li>Committed to 8 month training cycle, practicing 6 days per week at 5am.  </li>
 										
 				</ul>
 			</div>	
@@ -203,18 +208,11 @@ layout: cvbase
 			<div class="span12">
 				<ul>
 					<li>Partnered with WUSTL office of development and San Francisco technology company OpenDNS to develop Washington University's first startup accelerator program.</li>
-					<li>Organized speaker events on the WUSTL campus in the topics of venture capital and entrepreneurship. 30-60 attendees.  </li>
+					<li>Organized speaker events on the WUSTL campus in the topics of venture capital and entrepreneurship. </li>
 
 				</ul>
 			</div>	
 		</div>
-
-		<div class="row">
-			<div class="page-header">
-				<h2>Technical Experience</h2>
-			</div>
-		</div>
-
 		<div class="row" style="padding: 35px 0 4px 0;">
 			<div class="span8">
 				<h4 style="margin: 0;">Advanced Data Structures Research</h4>
@@ -324,8 +322,10 @@ layout: cvbase
 			<div class="span12">
 				<ul>
 					
-					<li>Learned PHP by implementing order page for Motley Fool website.</li>
+					<li>Implemented an online system to process transactions on the Motley Fool website. </li>
+					
 					<li>Coordinated interactions between development teams within The Motley Fool and PayPal.</li>
+					
 					<li>Learned Agile development standards, making use of Pair Programming and Test Driven Development.</li>
 					
 				</ul>
@@ -367,7 +367,7 @@ layout: cvbase
 <section>
 	<div class="row">
 		<div class="page-header">
-			<h2>Technical Skills</h2>
+			<h2>Technical</h2>
 		</div>
 	</div> <!-- end row -->
 			<div class="row">
@@ -407,7 +407,7 @@ layout: cvbase
 				</div>
 				<div class="span4">
 					<div class="progress" style="margin: 10px 0 10px 0; height: 22px;">
-						<div class="bar" style="width:80%;">
+						<div class="bar" style="width:70%;">
 						</div>
 					</div>
 				</div>
@@ -529,38 +529,36 @@ layout: cvbase
 <!-- 
 		<div class="row" style="padding: 35px 0 4px 0;">
 			<div class="span8">
-				<h4 style="margin: 0;">{{ experience.title }}</h4>
+				<h4 style="margin: 0;"></h4>
 			</div>
 			<div class="span4">
-				<h4 class="pull-right hidden-phone" style="margin:0;">{{ experience.city}}</h4>
+				<h4 class="pull-right hidden-phone" style="margin:0;"></h4>
 			</div>
 		</div>
 		<div class="row">
 			<div class="span6">
-				<span style="font-style:italic; font-size: 15px;">{{ experience.role }}</span>
+				<span style="font-style:italic; font-size: 15px;"></span>
 			</div>	
 			<div class="span6">
-				<span class="visible-phone label">{{ experience.date }}</span>
-				<span class="hidden-phone pull-right" style="font-style:italic; font-size: 15px;" >{{ experience.date }}</span>
+				<span class="visible-phone label"></span>
+				<span class="hidden-phone pull-right" style="font-style:italic; font-size: 15px;" ></span>
 			</div>
 		</div>
 		<div class="row" style="padding-top: 8px;">
 			<div class="span12">
 				<ul>
-					{% for bullet in experience.bullet_set.all|dictsort:"rank" %}
-					<li>{{ bullet.point }}</li>
-					{% endfor %}
+					
 				</ul>
 			</div>	
 		</div>
 		<div class="row">
 			<div class="span3">
-				<p><h4 style="text-align: right" class="hidden-phone">{{experience.title}}</h4></p>
-				<p><span class="badge visible-phone" style="text-align: center">{{experience.title}}</span></p>
+				<p><h4 style="text-align: right" class="hidden-phone"></h4></p>
+				<p><span class="badge visible-phone" style="text-align: center"></span></p>
 			</div>
 			<div class="span4">
 				<div class="progress" style="margin: 10px 0 10px 0; height: 22px;">
-					<div class="bar" style="width:{{ experience.percent }}%;">
+					<div class="bar" style="width:%;">
 					</div>
 				</div>
 			</div>
@@ -596,3 +594,17 @@ layout: cvbase
 
 
 
+
+
+</body>
+
+
+
+
+
+<!-- Scripts -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+</html>
