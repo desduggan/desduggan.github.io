@@ -9,7 +9,7 @@ title: Hypermedia Evaluation
 ## Introduction
 In the world of web services and API design, you can't go long without running headfirst into the RESTful design paradigm.  Not only do we see RESTful API's being implemented by technology giants such as Twitter and Google, but the last few years have seen a major proliferation of RESTful API's being developed by small and medium sized companies.  The RESTful community is extremely active, and the space continues to develop.  Hypermedia lives at the end of the spectrum of RESTful practices, and is considered the keystone to any truly RESTful design (see the image below).  (2) 
 
- ![Icon](img/hypermedia.png "Hypermedia Spectrum")
+ ![Icon](/img/hypermedia.png "Hypermedia Spectrum")
 
 From a high level, we can define the REST paradigm by the 6 constraints that it imposes on the design of web API's.  Without going into detail, a RESTful API is stateless and layered, and has a uniform interface.  The hypermedia constraint is a component of the uniform-interface constraint.  Again, avoiding the deep technical nature of hypermedia, an API that conforms to this constraint will provide links for related actions or resources, whenever a request is made. 
 
