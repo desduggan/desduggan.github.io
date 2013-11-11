@@ -1,6 +1,6 @@
 ---
 
-layout: post
+layout: postBase
 title: Hypermedia Evaluation
 
 ---

@@ -1,240 +1,132 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap3.css">
 
-	<!-- <link href='http://fonts.googleapis.com/css?family=Poiret+One|Ubuntu|Maven+Pro|Oxygen|Open+Sans' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300|Muli|Lato:900,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
 
-	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 
+    <title>  Hypermedia Evaluation |  Desmond Duggan </title>
 
-	<title>  Hypermedia Evaluation |  Desmond Duggan </title>
+    <style type="text/css">
 
-	<style type="text/css">
-		.container-fluid {
-			/*font-family: 'Poiret One', cursive;*/
-			/*font-family: 'Ubuntu', sans-serif;*/
-			font-family: 'Maven Pro', sans-serif;
-			/*font-family: 'Oxygen', sans-serif;*/
-			/*font-family: 'Open Sans', sans-serif;*/
-		}
+        /*Get rid of white margin upon resize. */
+        @media (max-width: 767px){
+            body {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+         }
 
-		.inline li {	
-			display: inline;
-		}
+        html, body {
+            height: 100%;
 
-		.text-center {
-			text-align: center;
-		}
+        }
 
-		.padLeft {
-			padding-left: 15px;
-		}
+        #name {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
+            font-size: 34pt;
+            color: #ffffff;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
 
-		a:hover {
-			text-decoration:none;
-			color: #c0392b;
-		}	
+        .styled-container {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 12pt;
+        }
 
-		body {
-			height: 100%;
-		}
+        .inline li {    
+            display: inline;
+        }
 
-		html {
-			height: 100%;
-		}
+        a:hover {
+            text-decoration:none;
+            color: #c0392b;
+        }   
 
-		a {
-			color: #27ae60;
-		}
+        .fullscreen {
+            padding: 0 15px;
+            width: 100%;
+            height: 100%;
 
-		#name {
-			color:#ecf0f1;
-		}
+            position: relative;
+        }
 
-		.bottom-padding {
-			padding-bottom: 33px;
-		}
+        .wideSection {
+            padding: 0 15px;
+            width: 100%;
+            height: auto;
+        }
 
-		.nav {
-			text-align: right;
-		}
+        #secondFrame {
+            background-color: #333739;
+        }
 
-		.top-padding {
-			padding-top: 200px;
-		}
+        .wideband-dark {
+            height: auto;
+            background-color: #333739;
+        }
 
-		.top-padding-mobile {
-			padding-top: 100px;
-		}
+        .styled-paragraph {
+            color: #ffffff;
+            font-size: 12pt;
+        }
 
-		.left-panel {
-			width:50%; 
-			height : 100%;  
-			background-color: #4c4c4c;
-			float: left;
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
+    </style>
 
-		.right-panel {
-			width:50%; 
-			height: auto;  
-			float: right;
-			top: 0;
-			left: 50%;
-			padding-bottom: 100px;
-		}
-
-		.top-panel {
-			width: 100%;
-			height: auto;
-			background-color: #4c4c4c;
-			float: right;
-			/*position: fixed;*/
-			top: 0;
-			left: 0;
-		}
-
-		.bottom-panel {
-			width: 100%;
-			padding-top: 200px;
-		}
-
-		.right_content_mobile {
-			padding-top:20px;
-			text-align: justify;
-		}
-
-		.nav-link {
-			color: #ecf0f1;
-		}
-
-		p > a:hover {
-			text-decoration:none;
-			color: #bdc3c7;
-		}	
-
-		li > a:hover {
-			text-decoration:none;
-			color: #bdc3c7;
-		}	
-
-		h1 > a {
-			color: #ecf0f1;
-		}
-
-		h1 > a:hover {
-			text-decoration:none;
-			color: #ecf0f1;
-		}
-
-		body {
-			background-color: #ecf0f1;
-		}
-
-		.content-title {
-			color:#4c4c4c;
-		}
-
-		#homepic {
-			width: 200px;
-		}
-
-		#homepic-mobile {
-			width: 200px;
-			margin-left: auto;
-			margin-right: auto;
-			display: block;
-		}
-
-		.img200 {
-			width:200px; 
-			display:inline-block;
-		}
-
-	</style>
-
-	<script type="text/javascript">
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-40742051-1', 'desmondrduggan.com');
-		ga('send', 'pageview');
-	</script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-40742051-1', 'desmondrduggan.com');
+        ga('send', 'pageview');
+    </script>
 
 </head>
 
 
+<body class="styled-container">
+    <div class="wideSection wideband-dark" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="/"><h1 class="text-center" id="name">Desmond Duggan</h1></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<body>
-
-<section class="left-panel hidden-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding bottom-padding">
-			<div class="span12">
-				<h1 class="pull-right" id="name"><a href="/">Desmond Duggan</a></h1>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span5 offset6">
-				<div class="nav">
-					<p class="lead"><a class="nav-link" href="/thoughts/">Thoughts</a></p>
-					<p class="lead"><a class="nav-link" href="/about/">About</a></p>
-					<p class="lead"><a class="nav-link" href="/cv/">CV</a></p>
-					<p class="lead"><a class="nav-link" href="/connect/">Connect</a></p>
-					<p class="lead"><a class="nav-link" href="/projects/">Projects</a></p>
-				</div>
-			</div>
-		<div>
-	</div>
-</section>
-
-<section class="top-panel visible-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding-mobile">
-			<div class="span12">
-				<h1 class="text-center" id="name"><a href="/">Desmond Duggan</a></h1>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12 text-center">
-				<ul class="inline">
-					<li><a class="nav-link" href="/thoughts/">Thoughts - </a></li>
-					<li><a class="nav-link" href="/about/">About - </a></li>
- 					<li><a class="nav-link" href="/cv/">CV - </a></li>
-					<li><a class="nav-link" href="/connect/">Connect - </a></p></li>
-					<li><a class="nav-link" href="/projects/">  Projects</a></p></li>
-				</ul>
-			</div>
-		<div>
-	</div>
-</section>
-
-<section class="content">
-
-<section class="right-panel hidden-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding bottom-padding">
-			<div class="span12">
-				<h1 class="content-title">Posts</h1>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span8 offset1">
-				<h1 id='what_does_a_business_gain_from_using_hypermedia'>What does a business gain from using hypermedia?</h1>
+    <div class="wideSection" >
+        <div class="container" style="margin-bottom: 75px;">
+            <div class="row">
+                <div class="col-md-2 col-xs-12">
+                    <h3>Other thoughts...</h3>
+                    <table class="table">
+                    
+                    <tr>
+<!--                         <td class="dateCol">Sunday, September 01 2013 </td>
+ -->                        <td> <a href="/2013/09/01/Hypermedia-Evaluation.html">Hypermedia Evaluation </a></td>
+                    </tr>
+                    
+                    </table>    
+                </div>
+                <div class="col-md-8 col-xs-12">
+                    <h1 id='what_does_a_business_gain_from_using_hypermedia'>What does a business gain from using hypermedia?</h1>
 
 <h2 id='introduction'>Introduction</h2>
 
 <p>In the world of web services and API design, you can&#8217;t go long without running headfirst into the RESTful design paradigm. Not only do we see RESTful API&#8217;s being implemented by technology giants such as Twitter and Google, but the last few years have seen a major proliferation of RESTful API&#8217;s being developed by small and medium sized companies. The RESTful community is extremely active, and the space continues to develop. Hypermedia lives at the end of the spectrum of RESTful practices, and is considered the keystone to any truly RESTful design (see the image below). (2)</p>
 
-<p><img alt='Icon' src='/img/hypermedia.png' /></p>
+<p><img src='/img/hypermedia.png' alt='Icon' /></p>
 
 <p>From a high level, we can define the REST paradigm by the 6 constraints that it imposes on the design of web API&#8217;s. Without going into detail, a RESTful API is stateless and layered, and has a uniform interface. The hypermedia constraint is a component of the uniform-interface constraint. Again, avoiding the deep technical nature of hypermedia, an API that conforms to this constraint will provide links for related actions or resources, whenever a request is made.</p>
 
@@ -315,109 +207,20 @@
 <h2 id='conclusion'>Conclusion</h2>
 
 <p>Hypermedia API&#8217;s can provide value for both clients and API providers, but quantifying the gains is difficult to do. I have listed three primary value propositions here: independent evolution, improved engineering efficiency and scalability, and simplified customer relations. Ultimately, these gains will have a larger impact when the long term consequences are considered. For a young, small scale API, it may be hard to justify the incorporation of hypermedia controls, due to the task of implementation and on boarding clients. However, for large scale, multifaceted API&#8217;s, hypermedia can have a strong impact on the businesses bottom line.</p>
-			</div>
-		</div>
-	</div>
-</section>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<section class="bottom-panel visible-phone">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12 text-center" style="padding-top:20px;">
-				<h1 id='what_does_a_business_gain_from_using_hypermedia'>What does a business gain from using hypermedia?</h1>
-
-<h2 id='introduction'>Introduction</h2>
-
-<p>In the world of web services and API design, you can&#8217;t go long without running headfirst into the RESTful design paradigm. Not only do we see RESTful API&#8217;s being implemented by technology giants such as Twitter and Google, but the last few years have seen a major proliferation of RESTful API&#8217;s being developed by small and medium sized companies. The RESTful community is extremely active, and the space continues to develop. Hypermedia lives at the end of the spectrum of RESTful practices, and is considered the keystone to any truly RESTful design (see the image below). (2)</p>
-
-<p><img alt='Icon' src='/img/hypermedia.png' /></p>
-
-<p>From a high level, we can define the REST paradigm by the 6 constraints that it imposes on the design of web API&#8217;s. Without going into detail, a RESTful API is stateless and layered, and has a uniform interface. The hypermedia constraint is a component of the uniform-interface constraint. Again, avoiding the deep technical nature of hypermedia, an API that conforms to this constraint will provide links for related actions or resources, whenever a request is made.</p>
-
-<p>Hypermedia is technically abstract and hard to grasp, and it can be very difficult to see the end value that it provides to the business. The purpose of this post is to explore the real value-add aspects of having a Hypermedia compliant API. Ultimately, I will argue that the flexible and dynamic nature of the decoupling between client and server within a hypermedia constrained API affords value in three areas: independent evolution, efficient development, and simplified client interaction.</p>
-
-<h2 id='independent_evolution'>Independent Evolution</h2>
-
-<blockquote>
-<p>Claim #1: If a business can decouple their server api from their api consumers by means of hypermedia controls, they are able to innovate faster and have the freedom to make high level business decisions, without the expensive consequences of having a non-flexible client.</p>
-</blockquote>
-
-<p>Take a simplified Media API called MultiMedia.com that has a large database of movies, which can be browsed and purchased. Up until this point, the Media API offered movies only. Clients could request a list of movies for a given genre by sending a GET request to the following address:</p>
-
-<pre><code> (1) http://www.multimedia.com/v1/genre/Action/</code></pre>
-
-<p>Now say that this business was extremely successful because they landed big partnerships with television show producers, something they had not anticipated. They want to incorporate the television shows into their API, but they run into an issue: if a client makes a request to the URI above, it is unclear whether they should receive a list of movies or television shows for the given genre. The CTO and his team decide that movies and television shows should be requested at the following new URI&#8217;s:</p>
-
-<pre><code> (2) http://www.multimedia.com/v1/movie/genre/Action/
-
- (3) http://www.multimedia.com/v1/television/genre/Action/</code></pre>
-
-<p>With a traditionally designed API, without hypermedia, it is clear at this point that if MultiMedia.com goes ahead with the change, all of their clients who were used to requesting movies at (1) will now break. In contrast, with hypermedia controls, this change would be simple and would not cause any breakage. Because the specific URI&#8217;s are requested at runtime in a hypermedia API, the client wouldn&#8217;t miss a beat. Furthermore, hypermedia controls offer options for discovering new resources, so the clients could become dynamically aware of the new link at (3).</p>
-
-<h4 id='implications'>Implications</h4>
-
-<p>This example illustrates the freedom product managers and business leaders have to make high level business decisions while avoiding technical complexities that come along with adding, modifying and removing features as a result of using a hypermedia API. The business development cycle can is more agile and flexible, less time is wasted handling changes, and there is less friction between the business demands and implementation.</p>
-
-<h2 id='improved_engineering_efficiency_and_scalability'>Improved Engineering Efficiency and Scalability</h2>
-
-<blockquote>
-<p>Claim #2: The flexibility and dynamic nature of hypermedia controls alleviate engineering constraints caused by the static nature of traditionally designed API&#8217;s, thereby increasing engineering productivity.</p>
-</blockquote>
-
-<p>The design of traditional API&#8217;s necessitates API consuming clients to program against components of the API that are liable to change: most notably, the API media type and the resource URI&#8217;s (see below for definitions). When a client interacts with the API in any way, they are sending a request to a resource URI and the response comes back in the form of the API media type. Therefore these two components are at the core of any API, and consequences of a change can be far reaching for the API consumers.</p>
-
-<p>In reality, there is a number of API&#8217;s for which the media type and resource URI&#8217;s will remain constant. For these API&#8217;s, the dynamic behavior of hypermedia controls will not produce much value. However, for many API&#8217;s, a change in a URI or media type is required either by business priorities or engineering constraints. For the latter group, hypermedia controls can have a positive impact on the API development.</p>
-
-<h4 id='improved_efficiency'>Improved Efficiency</h4>
-
-<p>Specifically, in reference to claim #1, when engineers have the ability to add and remove features with hypermedia, the business realizes the cost savings of using a hypermedia compliant API in two areas: firstly, when the engineers avoid refactoring code that was designed to meet the requirements of a specific feature, and secondly, when the engineers can avoid versioning due to the resistant nature of hypermedia.</p>
-
-<h4 id='improved_scalability'>Improved Scalability</h4>
-
-<p>Furthermore, hypermedia provides a more scalable model for both clients and API providers. On the one hand, a hypermedia consuming client has to keep track of only one URI, the base URI, and leave the API flow to the API designers while simply using the links provided in the hypermedia response to navigate the resources. On the other hand, API providers have the ability to link resources and modify features as needed.</p>
-
-<h2 id='simplified_customer_relations'>Simplified Customer Relations</h2>
-
-<blockquote>
-<p>Claim #3: Decoupling the client and server with hypermedia controls reduces the amount of customer support demanded by clients.</p>
-</blockquote>
-
-<p>In reality, there is degree of ongoing communication between the API provider and consumer. If a API provider makes updates to their system on a four month cycle, then they will want to be communicating these changes to their clients. Whether they add functionality or update performance, clients should be aware of such changes. Accordingly, the business must commit resources to customer relations and technical support.</p>
-
-<p>In this context, it&#8217;s possible that the provider is forced to induce a client-breaking-change, such as changing a resource URI or removing a resource property, and must communicate the change to all of their clients. From a customer relationship management standpoint, this can be a very expensive task, some clients will be very resistive to change.</p>
-
-<p>Although hypermedia API&#8217;s certainly don&#8217;t prevent all issues that come along with client-breaking-changes, they are much more flexible than traditionally designed ones. For some changes, such as adding features or modifying resource URI&#8217;s, hypermedia API&#8217;s completely eliminate the need to upgrade clients. For more difficult changes such as resource property modifications, hypermedia controls provide additional methods of communicating change to the clients such as resource property meta data in the API media type.</p>
-
-<h2 id='drawbacks_to_hypermedia_controls'>Drawbacks to Hypermedia Controls</h2>
-
-<ol>
-<li>
-<p>Hypermedia API&#8217;s take more time and planning to successfully implement.</p>
-</li>
-
-<li>
-<p>Clients must understand how to work with a hypermedia response.</p>
-</li>
-
-<li>
-<p>Caching becomes more important because the API server is stateless.</p>
-</li>
-
-<li>
-<p>Despite the existence of some hypermedia specific media types such as HAL or Siren, there isn&#8217;t a universally accepted media type yet.</p>
-</li>
-</ol>
-
-<h2 id='conclusion'>Conclusion</h2>
-
-<p>Hypermedia API&#8217;s can provide value for both clients and API providers, but quantifying the gains is difficult to do. I have listed three primary value propositions here: independent evolution, improved engineering efficiency and scalability, and simplified customer relations. Ultimately, these gains will have a larger impact when the long term consequences are considered. For a young, small scale API, it may be hard to justify the incorporation of hypermedia controls, due to the task of implementation and on boarding clients. However, for large scale, multifaceted API&#8217;s, hypermedia can have a strong impact on the businesses bottom line.</p>
-			</div>
-		</div>
-	</div>
-</section>
-
-
-</section>
+    <div class="wideSection wideband-dark" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4 text-center">
+                    <p class="styled-paragraph" style="margin-top:20px;">Copyright Desmond R. Duggan 2013</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
