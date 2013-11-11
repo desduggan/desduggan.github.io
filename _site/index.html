@@ -5,34 +5,54 @@
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap3.css">
 
-	<!-- <link href='http://fonts.googleapis.com/css?family=Poiret+One|Ubuntu|Maven+Pro|Oxygen|Open+Sans' rel='stylesheet' type='text/css'> -->
-
-	<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300|Lato:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 
 	<title>  Desmond Duggan </title>
 
 	<style type="text/css">
-		.container-fluid {
-			/*font-family: 'Poiret One', cursive;*/
-			/*font-family: 'Ubuntu', sans-serif;*/
-			font-family: 'Maven Pro', sans-serif;
-			/*font-family: 'Oxygen', sans-serif;*/
-			/*font-family: 'Open Sans', sans-serif;*/
+
+		/*Get rid of white margin upon resize. */
+		@media (max-width: 767px){
+		    body {
+		        padding-right: 0px;
+		        padding-left: 0px;
+		    }
+		 }
+
+		html, body {
+			height: 100%;
+
+		}
+
+		.styled-container-white {
+			color: #ffffff;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			font-size: 12pt;
+		}
+
+		.styled-container-dark {
+			color: #000000;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			font-size: 12pt;
+		}
+
+		#name {
+			font-family: 'Quicksand', sans-serif;
+			font-weight: 300;
+			font-size: 40pt;
+			/*padding-top: 35%;*/
+			margin-top: 35%;
+			margin-bottom: auto;
 		}
 
 		.inline li {	
 			display: inline;
-		}
-
-		.text-center {
-			text-align: center;
-		}
-
-		.padLeft {
-			padding-left: 15px;
 		}
 
 		a:hover {
@@ -40,123 +60,79 @@
 			color: #c0392b;
 		}	
 
-		body {
+		.fullscreen {
+			padding: 0 15px;
+			width: 100%;
 			height: 100%;
+
+			position: relative;
 		}
 
-		html {
-			height: 100%;
-		}
-
-		a {
-			color: #27ae60;
-		}
-
-		#name {
-			color:#ecf0f1;
-		}
-
-		.bottom-padding {
-			padding-bottom: 33px;
-		}
-
-		.nav {
-			text-align: right;
-		}
-
-		.top-padding {
-			padding-top: 200px;
-		}
-
-		.top-padding-mobile {
-			padding-top: 100px;
-		}
-
-		.left-panel {
-			width:50%; 
-			height : 100%;  
-			background-color: #4c4c4c;
-			float: left;
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
-
-		.right-panel {
-			width:50%; 
-			height: auto;  
-			float: right;
-			top: 0;
-			left: 50%;
-			padding-bottom: 100px;
-		}
-
-		.top-panel {
+		.wideSection {
+			padding: 0 15px;
 			width: 100%;
 			height: auto;
-			background-color: #4c4c4c;
-			float: right;
-			/*position: fixed;*/
-			top: 0;
-			left: 0;
 		}
 
-		.bottom-panel {
-			width: 100%;
-			padding-top: 200px;
+		#secondFrame {
+			background-color: #333739;
 		}
 
-		.right_content_mobile {
-			padding-top:20px;
-			text-align: justify;
+		#thirdFrame {
+			background-color: #ffffff;
 		}
 
-		.nav-link {
-			color: #ecf0f1;
+		#fourthFrame {
+			background-color: #333739;
 		}
 
-		p > a:hover {
-			text-decoration:none;
-			color: #bdc3c7;
-		}	
-
-		li > a:hover {
-			text-decoration:none;
-			color: #bdc3c7;
-		}	
-
-		h1 > a {
-			color: #ecf0f1;
+		#fifthFrame {
+			background-color: #ffffff;
 		}
 
-		h1 > a:hover {
-			text-decoration:none;
-			color: #ecf0f1;
+		.title {
+			font-family: 'Poiret One', sans-serif;
+			font-weight: 400;
+			color: #2ECC71;
+			font-size: 35pt;
 		}
 
-		body {
-			background-color: #ecf0f1;
+		.content-wrapper {
+			padding-top: 4%;
+			padding-bottom: 5%;
+			/*height: 75%;*/
 		}
 
-		.content-title {
-			color:#4c4c4c;
-		}
-
-		#homepic {
-			width: 200px;
-		}
-
-		#homepic-mobile {
-			width: 200px;
-			margin-left: auto;
-			margin-right: auto;
+		.fullscreen-bottom {
+			position: absolute;
 			display: block;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 6em;
+			text-decoration: none;
+			text-align: center;
 		}
 
-		.img200 {
-			width:200px; 
-			display:inline-block;
+		#downArrow {
+			height: 30px;
 		}
+
+		.connect-icon {
+			/*width: 100px;*/
+			margin: 0 auto;
+			margin-bottom: 25px;
+		}
+
+		.page-footer {
+            height: 30px;
+            background-color: #ffffff;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+			font-size: 12pt;
+   		}
+
+
 
 	</style>
 
@@ -172,87 +148,160 @@
 </head>
 
 
-
 <body>
-
-<section class="left-panel hidden-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding bottom-padding">
-			<div class="span12">
-				<h1 class="pull-right" id="name"><a href="/">Desmond Duggan</a></h1>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span5 offset6">
-				<div class="nav">
-					<p class="lead"><a class="nav-link" href="/thoughts/">Thoughts</a></p>
-					<p class="lead"><a class="nav-link" href="/about/">About</a></p>
-					<p class="lead"><a class="nav-link" href="/cv/">CV</a></p>
-					<p class="lead"><a class="nav-link" href="/connect/">Connect</a></p>
-					<p class="lead"><a class="nav-link" href="/projects/">Projects</a></p>
+	<div class="fullscreen" >
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 id="name" class="text-center">Desmond Duggan</h1>
 				</div>
-			</div>
-		<div>
-	</div>
-</section>
-
-<section class="top-panel visible-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding-mobile">
-			<div class="span12">
-				<h1 class="text-center" id="name"><a href="/">Desmond Duggan</a></h1>
-			</div>
+		  	</div>
+			<div class="row fullscreen-bottom">
+				<div class="col-xs-12"><img id="downArrow" src='/img/down.png' alt='Icon'/></div>
+		  	</div>
 		</div>
-		<div class="row-fluid">
-			<div class="span12 text-center">
-				<ul class="inline">
-					<li><a class="nav-link" href="/thoughts/">Thoughts - </a></li>
-					<li><a class="nav-link" href="/about/">About - </a></li>
- 					<li><a class="nav-link" href="/cv/">CV - </a></li>
-					<li><a class="nav-link" href="/connect/">Connect - </a></p></li>
-					<li><a class="nav-link" href="/projects/">  Projects</a></p></li>
-				</ul>
-			</div>
-		<div>
 	</div>
-</section>
+
+	<div class="wideSection styled-container-white" id="secondFrame">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="title">About</h1>
+				</div>
+		  	</div>
+			<div class="row content-wrapper">
+				<div class="col-xs-12 col-md-9">
+
+				<p class="styled-paragraph">Currently, I study Systems Engineering and Computer Science at <a href="http://wustl.edu/">Washington University in St. Louis</a>. In the last three years, I discovered passions that include entreprenuership, technology, and fitness.</p>
+
+				<p class="styled-paragraph">Outside of class, I row six days per week with the Washington University men's <a href="http://www.crew.wustl.edu/">varsity crew team</a>. We compete in all major regattas in the midwestern and eastern regions of the United States. In addition, as the president of the team, I ensure the safe transportation of our equipment and team members, lead the executive board, and manage our relations with the St. Louis community.</p>
+
+				<p class="styled-paragraph">I am also the director of <a href="http://www.wute.vc">wute.vc</a>, an organization that hosts speakers in venture capital and entrepreneurship for the Washington University community. We are the primary application processor for a startup accelerator for wustl students called WuStart@OpenDNS. </p>
+
+				<p class="styled-paragraph">In my spare time, I enjoy building web and mobile applications, tasting new wines, and camping. </p>
+
+				<p class="styled-paragraph">Next fall I will be working full-time at the <a href="http://www.accenture.com/us-en/technology/technology-labs/Pages/index.aspx">Accenture Technology Labs</a> in San Jose, CA.  </p>
+
+
+
+				</div>
+				<div class="col-xs-12 col-md-3 text-center">
+					<div class="well">
+						<a href="/cv/"><button type="button" class="btn btn-default btn-lg" style="margin:10px;">
+							<span class="glyphicon glyphicon-book"></span> Resume
+						</button>
+						</a>
+						<a href="mailto:duggan629@gmail.com"><button type="button" class="btn btn-default btn-lg"  style="margin:10px;">
+							<span class="glyphicon glyphicon-send"></span> Contact
+						</button></a>
+					</div>
+				</div>
+		  	</div>
+
+		</div>
+	</div>
+
+	<div class="wideSection styled-container-dark" id="thirdFrame">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="title">Selected Work</h1>
+				</div>
+		  	</div>
+			<div class="row content-wrapper">
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">CELect Consulting Program</div>
+						<div class="panel-body"> 
+							<img src="/img/farm.jpg" class="img-responsive">
+							<p>In fall 2013, I was accepted to and participated in the <a href="http://olinblog.wustl.edu/author/celect-at-t-rex/">CELect at the T-Rex</a> program in the Olin School of Business at Wash U. For 10 weeks, I consulted a startup called <a href="https://www.farmplicity.com">Farmplicity</a> with a team of three other students. </p> 
+							<p> Initially, the project scope was to complete an industry analysis, but we expanded to project to include an expansion strategy. We met with Farmplicity several times to understand the company, and at the end of the 10 weeks, my team presented our results at the T-Rex startup incubator in downtown St. Louis. </p>
+
+						</div>
+					</div>				
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">Systems Engineering Lab</div>
+						<div class="panel-body"> 
+							<img src="/img/farm.jpg" class="img-responsive">
+							<p>In this class, I paired with 2 other engineering students to model and control a real robotic system using Systems Engineering Control Theory. 
+							</p>
+							<p>We used a combination of Matlab and Simulink to simulate the robotic system on the computer. After we ensured our controllers worked in a simulated environment, we downloaded the controller to the real system and experimented with it. Afer adjusting our parameters to account for inefficiencies in the real system, we successfully controlled the system!  </p>
+						</div>					
+					</div>				
+				</div>
+<!-- 				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">Systems Engineering Lab</div>
+						<div class="panel-body"> This is a cool video of our project. </div>
+					</div>				
+				</div>
+ -->			</div>
+		</div>
+	</div>
+
+	<div class="wideSection styled-container-white" id="fourthFrame">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="title">Thoughts</h1>
+				</div>
+		  	</div>
+			<div class="row content-wrapper">
+				<div class="col-xs-8 col-xs-offset-2">
+
+					<table class="table styled-paragraph">
+					
+					<tr>
+						<td class="dateCol">Sunday, September 01 2013 </td>
+						<td> <a href="/2013/09/01/Hypermedia-Evaluation.html">Hypermedia Evaluation </a></td>
+					</tr>
+					
+					</table>	
+				</div>		
+		  	</div>
+
+		</div>
+	</div>
+
+	<div class="wideSection styled-container-dark" id="fifthFrame">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="title">Connect</h1>
+				</div>
+		  	</div>
+			<div class="row content-wrapper">
+				<div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-5">
+					<a href="http://www.linkedin.com/pub/desmond-duggan/28/3ab/39a"><img src="/img/icon-linkedin.png" class="img-responsive connect-icon"></a>
+				</div>
+				<div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-5">
+					<a href="https://github.com/drduggan"><img src="/img/icon-github.png" class="img-responsive connect-icon"></a>
+				</div>
+				<div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-5">
+					<a href="https://twitter.com/DesmondDuggan2"><img src="/img/icon-twitter.png" class="img-responsive connect-icon"></a>
+				</div>
+
+		  	</div>
+
+		</div>
+	</div>
+
+    <div class="wideSection page-footer" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4 text-center" style="margin-top:10px;">
+                	<p>Copyright Desmond R. Duggan 2013</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 <section class="content">
 
-<section class="right-panel hidden-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding bottom-padding">
-			<div class="span12">
-				<!-- <h1 class="content-title">Engineer and Athlete</h1> -->
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span10 offset1">
-				<!-- <img src="img/des.jpg" class="img-rounded pull-right" id="homepic"> -->
-								<p class="lead">Hello, my name is Desmond. </p>
-				<p class="lead">This is my website that I made using <a href="http://jekyllrb.com">Jekyll</a>, a simple, blog-aware, static site generator written in Ruby. </p>
-				<p class="lead">This is where you can find projects I'm working on, blog posts, my cv, and other things.  </p>
-				<p class="lead">Thanks for visiting! </p>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="bottom-panel visible-phone">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12 right_content_mobile" style="text-align:justify;">
-				<!-- <h1 class="content-title" style="text-align:center;">Engineer and Athlete</h1> -->
-				<!-- <img src="img/des.jpg" class="img-rounded" id="homepic-mobile"> -->
-				<p class="lead">Hello, my name is Desmond. </p>
-				<p class="lead">This is my website that I made using <a href="http://jekyllrb.com">Jekyll</a>, a simple, blog-aware, static site generator written in Ruby. </p>
-				<p class="lead">This is where you can find projects I'm working on, blog posts, my cv, and other things.  </p>
-				<p class="lead">Thanks for visiting! </p>
-			</div>
-		</div>
-		</div>
-	</div>
-</section>
 
 
 </section>
