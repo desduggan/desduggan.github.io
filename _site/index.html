@@ -6,6 +6,8 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap3.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Quicksand:300|Lato:300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -74,19 +76,20 @@
 			height: auto;
 		}
 
-		#secondFrame {
+		#about {
 			background-color: #333739;
+			/*height: 750px;*/
 		}
 
-		#thirdFrame {
+		#selectedWork {
 			background-color: #ffffff;
 		}
 
-		#fourthFrame {
+		#thoughts {
 			background-color: #333739;
 		}
 
-		#fifthFrame {
+		#connect {
 			background-color: #ffffff;
 		}
 
@@ -157,12 +160,12 @@
 				</div>
 		  	</div>
 			<div class="row fullscreen-bottom">
-				<div class="col-xs-12"><img id="downArrow" src='/img/down.png' alt='Icon'/></div>
+				<div class="col-xs-12"><a href="#" id="downarrowlink"><img id="downArrow" src='/img/down.png' alt='Icon'/></a></div>
 		  	</div>
 		</div>
 	</div>
 
-	<div class="wideSection styled-container-white" id="secondFrame">
+	<div class="wideSection styled-container-white" id="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -201,7 +204,7 @@
 		</div>
 	</div>
 
-	<div class="wideSection styled-container-dark" id="thirdFrame">
+	<div class="wideSection styled-container-dark" id="selectedWork">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -211,7 +214,7 @@
 			<div class="row content-wrapper">
 				<div class="col-md-4">
 					<div class="panel panel-default">
-						<div class="panel-heading">CELect Consulting Program</div>
+						<div class="panel-heading"><b>CELect Consulting Program</b></div>
 						<div class="panel-body"> 
 							<img src="/img/farm.jpg" class="img-responsive">
 							<p>In fall 2013, I was accepted to and participated in the <a href="http://olinblog.wustl.edu/author/celect-at-t-rex/">CELect at the T-Rex</a> program in the Olin School of Business at Wash U. For 10 weeks, I consulted a startup called <a href="https://www.farmplicity.com">Farmplicity</a> with a team of three other students. </p> 
@@ -222,12 +225,15 @@
 				</div>
 				<div class="col-md-4">
 					<div class="panel panel-default">
-						<div class="panel-heading">Systems Engineering Lab</div>
+						<div class="panel-heading"><b>Systems Engineering Lab</b></div>
 						<div class="panel-body"> 
-							<img src="/img/farm.jpg" class="img-responsive">
+							<a href="https://vimeo.com/79447753"><img src="/img/ball_and_beam_photo.jpg" class="img-responsive"></a>
+							<br>
+							<p>Click on the picture above to see a video!</p>
+							<hr>
 							<p>In this class, I paired with 2 other engineering students to model and control a real robotic system using Systems Engineering Control Theory. 
 							</p>
-							<p>We used a combination of Matlab and Simulink to simulate the robotic system on the computer. After we ensured our controllers worked in a simulated environment, we downloaded the controller to the real system and experimented with it. Afer adjusting our parameters to account for inefficiencies in the real system, we successfully controlled the system!  </p>
+							<p>We used a combination of Matlab and Simulink to simulate the robotic system on the computer. After we ensured our controllers worked in a simulated environment, we downloaded the controller to the real system and experimented with it. Afer adjusting our parameters to account for inefficiencies in the real system, we successfully controlled the system! </p>
 						</div>					
 					</div>				
 				</div>
@@ -241,7 +247,7 @@
 		</div>
 	</div>
 
-	<div class="wideSection styled-container-white" id="fourthFrame">
+	<div class="wideSection styled-container-white" id="thoughts">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -265,7 +271,7 @@
 		</div>
 	</div>
 
-	<div class="wideSection styled-container-dark" id="fifthFrame">
+	<div class="wideSection styled-container-dark" id="connect">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -305,6 +311,20 @@
 
 
 </section>
+
+<script type="text/javascript">
+	// $("#downarrowlink").click(function() {
+	// 	$.scrollTo('div#about', 500);
+	// });
+
+	$("#downarrowlink").click(function() {
+    	$('html, body').animate({
+        	scrollTop: $("#about").offset().top
+    	}, 1000
+    );
+});
+
+</script>
 
 </body>
 
