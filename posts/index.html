@@ -1,0 +1,16 @@
+---
+layout: base
+title: All Posts
+nav: /posts
+---
+
+<section class="content">
+    <div class="main-content content-landing">
+        <p class="lead">ALL POSTS</p>
+        <ul class="project-list">
+            {% for post in site.posts %}
+                <li><span>{{post.date | date: "%b %d"}}</span><a href="{{post.url}}">{{post.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

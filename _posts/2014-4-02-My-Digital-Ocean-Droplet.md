@@ -1,14 +1,17 @@
 ---
 
-layout: post_v2
+layout: post
 title: My Digital Ocean Droplet
 excerpt: Going from nothing to a Django capable server. 
-github: http://drduggan.github.io/Cloud_Server_Setup
+link: http://drduggan.github.io/Cloud_Server_Setup
+linkname: Github
 
 ---
 
 ##  {{page.title}}
 
-I've always wanted my own cloud server to serve as a sandbox for my side projects, but frankly, I've always been a little intimidated by this stuff so I avoided it for a long time. Finally though, I allocated some time to get one up and running, and I was surprised at how simple it was. 
+Having a server to use as a sandbox for my side projects has been on my todo list for a while, but school work kept it a low priority until this weekend when I had some time to get one up and running. 
 
-In less than 24 hours my Digital Ocean Droplet was serving a Django site based in a safe VirtualEnv and filling a MySQL database with scraped data from the web. It was not without challenges, however. One frustration I had was that I couldn't find one single tutorial to go from nothing to Django capable server, so I made one that I hope will be useful to people looking to make their own servers. 
+Specifically, I wanted one that was capable of serving Django applications because it's my modern framework of choice. Surprisingly though, I couldn't find a solid end to end guide to follow, so I pieced together a few different sources and figured some stuff out on my own. 
+
+Below is a link to a step by step guide I wrote for anyone trying to do the same thing. I tested as much as I could during development, but I haven't gone through it with a new machine (feedback is appreciated!). 

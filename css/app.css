@@ -1,3 +1,14 @@
+/*
+* Created by Desmond Duggan 2014
+* Credit for drawer checkbox to @mdo https://github.com/poole/lanyon.
+*
+*
+*
+*
+*/
+
+
+
 /*Fonts*/
 @font-face {
     font-family: 'ProximaNova-Thin';
@@ -20,13 +31,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'MinionPro-Regular';
-    src: url('fonts/MinionPro-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /*Get rid of white margin upon resize. */
 @media (max-width: 767px){
     body {
@@ -36,91 +40,237 @@
  }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     overflow-x: hidden;
     font-family: 'ProximaNova-Thin', sans-serif;
     font-weight: 300;
     font-size: 18px;
+    padding: 0 0px;
+    margin: 0;
+    color: #444444;
 }
 
-.fullscreen {
+#page {
     padding: 0 0px;
     width: 100%;
     height: 100%;
     position: relative;
+    left: 0;
     /*background-color: #B84C41;*/
-}
-
-.large-screen-name {
-    margin-top: 150px;
-}
-
-.small-screen-name {
-    margin-top: 50px;
-}
-
-#name {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 300;
-    font-size: 40pt;
-}
-
-#img1 {
-    margin: 0 8px;
-    height: 30px;
-    width: 30px;
-}
-
-#img2 {
-    margin: 0 8px;
-    height: 30px;
-    width: 30px;
-}
-
-#img3 {
-    margin: 0 8px;
-    height: 30px;
-    width: 30px;
-}
-
-.shadow {
-    border: 2px;
-    border-radius: 3px;
-    -moz-box-shadow:    0px 0px 1px 0px #ccc;
-    -webkit-box-shadow: 0px 0px 1px 0px #ccc;
-    box-shadow:         0px 0px 1px 0px #ccc;
-    margin-top: 25px;
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-
-.smaller-font {
-    font-size: 12pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'ProximaNova-Semibold', sans-serif;
 }
 
-.projects h2 {
-	font-family: 'ProximaNova-Thin', sans-serif;	
+a {
+    text-decoration: none;
 }
 
-.slider-block {
-	padding: 8px 0;
+
+/* Style for name */
+.main-header {
+    text-align: center;
+    padding-top: 4rem;
 }
+
+.main-content ul {
+    list-style: none;
+    padding-left: 2em;
+}
+
+/* Get the stuff centered on the screen relative to screen size */
+.wrapper {
+    padding: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+  max-width: 28rem;
+  .content-landing{
+    padding:0;
+  }
+}
+@media (min-width: 38rem) {
+  .container {
+    max-width: 32rem;
+  }
+}
+@media (min-width: 56rem) {
+  .container {
+    max-width: 38rem;
+  }
+}
+
+.main-content {
+    margin-top: 4em;
+}
+
+
+.name {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Little dash on the page */
+.dash {
+    border-bottom: 3px solid #272627;
+    margin: 35px auto auto;
+    overflow: visible;
+    width: 30px;
+}
+
+.dash-light {
+    border-bottom: 3px solid #EFEFEF;
+    margin: 15px auto 15px auto;
+    overflow: visible;
+    width: 30px;
+}
+
+/* Project listing stuff*/
+.main-content span {
+    padding-right: 2em;
+    color: #979797;
+}
+
+.main-content a {
+    color: #444444;
+    text-decoration: none;
+}
+
+.main-content a:hover {
+    text-decoration: underline;
+}
+
+.lead {
+    font-size: 1.5em;
+}
+
+
+/* ------------------------- Drawer css -------------------------*/
+
+
+.drawer {
+    background-color: #1e1e1e;
+    position: fixed;
+    width: 14rem;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+    left: -14rem;
+}
+
+.drawer.drawer-open {
+    left: 0;
+}
+
+.drawer-push-right {
+    left: 0;
+}
+
+#page.page-push-right {
+    left: 14rem;
+}
+
+/* transitions */
+.drawer, 
+#page {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: scroll;
+}
+
+
+/* Main drawer styling */
+.drawer {
+    color: #EFEFEF;
+}
+
+.drawer-content {
+    margin-top: 3em;
+}
+
+.drawer-content .padding-1 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+}
+
+.drawer-header > #small-picture {
+    position: relative;
+    border-radius:50%;
+    overflow:hidden;
+    margin:auto;
+    border: solid 2px;
+    border-color: #EFEFEF;
+    left: 0;
+    top: 0;
+    width: 60px;
+    float: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.drawer-header > .name {
+    float: left;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.drawer-content .summary {
+    font-size: .8em;
+    color: #8F8F8F;
+    text-align: center;
+    margin-bottom: 1rem;
+    clear: both;
+}
+
+/* Links */
+.drawer ul, .outlinks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer ul > li , .outlinks ul > li {
+    width: 100%;
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    cursor: pointer;
+}
+
+.drawer ul > li.active {
+    background-color: #303030;
+}
+
+.drawer ul > li:hover, .outlinks ul > li:hover {
+    background-color: #303030;
+}
+
+/* Since the a must be clickable, expand the clickable region to the entire LI */
+.drawer ul a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #EFEFEF;
+    outline: 0;
+}
+
+/* ------------------ Post CSS --------------------*/
 
 .round-btn{
-	border-radius: 300px;
-	border: 1px solid #333739;
-	padding: 6px 8px;
-	margin: 0 5px;
-	font-size: 16px;
-	color: #333739;
+    border-radius: 300px;
+    border: 1px solid #303030;
+    padding: 6px 8px;
+    margin: 0 5px;
+    font-size: 16px;
+    color: #303030;
 
-	/*webkit stuff*/
-	-webkit-transition: color .2s;
+    /*webkit stuff*/
+    -webkit-transition: color .2s;
     -moz-transition:    color .2s;
     -ms-transition:     color .2s;
     -o-transition:      color .2s;
@@ -132,38 +282,54 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 .round-btn:hover {
-	text-decoration: none;
-	color: #fff;
-	background-color: #333739;
+    text-decoration: none;
+    color: #fff;
+    background-color: #303030;
 }
 
 .round-btn:focus {
-	text-decoration: none;
-	color: #333739;
-	background-color: #FFF;
+    text-decoration: none;
+    color: #303030;
+    background-color: #FFF;
 }
 
-.dash {
-    border-bottom: 3px solid #272627;
-    margin: 35px auto auto;
-    overflow: visible;
-    width: 30px;
+.drawer-toggle-selected {
+  color: #EFEFEF !important;
+  background-color: #1e1e1e !important;
 }
 
-.main-slick {
-    margin-top: 10px;
+/* Style the `label` that we use to target the `.drawer-checkbox` */
+.drawer-toggle {
+  position: absolute;
+  top:  1rem;
+  left: 1rem;
+  display: block;
+  width: 1.5rem;
+  padding: .5rem .65rem;
+  color: #444444;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.drawer-toggle:before {
+  display: block;
+  content: "";
+  width: 100%;
+
+  padding-bottom: .2rem;
+  border-top: 0.6em double;
+  border-bottom: 0.2em solid;
+
+  /* Make the border inside the box */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.connect-list {
-    padding-top: 20px;
+#drawer-checkbox {
+    display: none;
 }
 
-.topic-image {
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 6px;
-}
-
-.resume p,span,li {
-	font-family: 'MinionPro-Regular', sans-serif;	
+#drawer-checkbox:checked + .drawer {
+  visibility: visible;
 }

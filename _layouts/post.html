@@ -3,31 +3,23 @@ layout: base
 ---
 
 <section class="content">
+	{{ content }}
 
-<section class="right-panel hidden-phone">
-	<div class="container-fluid">
-		<div class="row-fluid top-padding bottom-padding">
-			<div class="span12">
-				<h1 class="content-title">Posts</h1>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span8 offset1">
-				{{ content }}
-			</div>
-		</div>
+	{% if page.link %}
+    <div style="text-align:right;">
+        <a href="{{ page.link }}" class="round-btn">{{page.linkname}}</a>
+    </div>
+    {% endif %}
+
+    <div class="main-content content-landing">
+	    <p class="lead">OTHER POSTS</p>
+	    <ul class="project-list">
+	        {% for post in site.posts limit:5 %}
+				{% if post.title != page.title %}
+				    <li><span>{{post.date | date: "%b %d"}}</span><a href="{{post.url}}">{{post.title}}</a></li>
+				{% endif %}
+	        {% endfor %}
+	    </ul>
 	</div>
 </section>
 
-<section class="bottom-panel visible-phone">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12 text-center" style="padding-top:20px;">
-				{{ content }}
-			</div>
-		</div>
-	</div>
-</section>
-
-
-</section>
