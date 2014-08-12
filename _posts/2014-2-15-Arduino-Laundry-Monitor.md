@@ -4,7 +4,7 @@ layout: post
 title: Arduino Laundry Monitor
 excerpt: A writeup on an Arduino based laundry machine monitor we built for our home. 
 link: http://drduggan.github.io/Arduino_Laundry_Machine/
-linkname: Github
+linkname: Code on Github
 
 ---
 

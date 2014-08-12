@@ -4,7 +4,7 @@ layout: post
 title: My Digital Ocean Droplet
 excerpt: Going from nothing to a Django capable server. 
 link: http://drduggan.github.io/Cloud_Server_Setup
-linkname: Github
+linkname: How To
 
 ---
 
