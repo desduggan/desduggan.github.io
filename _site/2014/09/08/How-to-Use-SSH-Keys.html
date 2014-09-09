@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+<!-- 
+    Author: Desmond Duggan 2014
+    Inspiration from Hila Peleg hilapeleg.io
+ -->
+
+    <!-- Meta stuff -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>  How To Use SSH Keys |  Desmond Duggan </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/modernscale.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+
+</head>
+
+
+<input class="drawer-checkbox" id="drawer-checkbox" type="checkbox">
+
+    <body id="page">        
+    <nav id="drawer" class="drawer">
+        <div class="drawer-content">
+            <div class="padding-1">
+                <div class="drawer-header">
+                    <img id="small-picture" src="/img/me.png">
+                    <h4 class="name">Desmond <br> Duggan</h4>  
+                </div>
+
+                <p class="summary">Desmond is a technology consultant working with the Accenture Technology Labs in San Jose, California. </p>
+            </div>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li > <a href="/">Home</a>
+                        </li>
+                    
+                
+                    
+                        <li > <a href="/posts">All Posts</a>
+                        </li>
+                    
+                
+            </ul>
+
+            <div class="dash-light"></div>                       
+
+            <div class="outlinks">
+                <ul>
+                    <li><a href="http://www.linkedin.com/pub/desmond-duggan/28/3ab/39a">LinkedIn</a></li>
+                    <li><a href="http://github.com/drduggan">Github</a></li>
+                    <li><a href="mailto:desmondrduggan@gmail.com">Gmail</a></li>
+                </ul>
+            </div>
+            
+            <div class="padding-1">
+                <p style="font-size: .8em; text-align:center;">&copy; All Rights Reserved 2014</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+            <label class="drawer-toggle" id="drawer-toggle" for="drawer-checkbox"></label>
+        <!-- <a class="drawer-toggle" id="drawer-toggle"></a> -->
+        <div class="wrapper container">
+
+            <section class="content">
+	<h2 id="how_to_use_ssh_keys">How To Use SSH Keys</h2>
+
+<h3 id="short_summary_of_ssh_keys">Short summary of SSH keys</h3>
+
+<p>The ssh authentication method works like the digital analogy of the <a href="http://www.gregmiller.net/locks/mitguide/chapter2.html">real-world lock and key system</a>.</p>
+
+<p>The bronze key I use to unlock my front door at home uniquely matches the interior of that lock with a series of peaks and valleys etched on the top of the key. If I lose my key and I don’t have any backups, I have to replace the lock because there is no way to reverse-engineer the key from the lock.</p>
+
+<p>The ssh system works in a similar way by generating a pair of files related through a that are analogous to a key and lock. The first file is private, only to be used when trying to “unlock the door.” The second file is public and is basically a digital “lock,” which you can distribute to as many “doors” as you want.</p>
+
+<p>To authenticate with a server, you first install your public key with it. Then, each time you care to authenticate, you securely send your private key to the server and it uses an algorithm to confirm that it matches with your public key. Since the relationship is unique, there isn’t a way that someone else could guess your private key, and impersonate you.</p>
+
+<h3 id="how_to_use_ssh_keys_2">How to Use SSH Keys</h3>
+
+<p><strong>Make an SSH directory</strong></p>
+
+<p>If you’ve never used ssh before, create a <code>.ssh</code> folder in your home directory. This location isn’t required, but it’s accepted practice.</p>
+
+<pre><code>$ mkdir ~/.ssh</code></pre>
+
+<p><strong>Generate SSH Keys</strong></p>
+
+<p>Use the following command to go to your .ssh directory generate an SSH key pair using the <a href="http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29">RSA algorithm</a>.</p>
+
+<pre><code>$ cd ~/.ssh 
+$ ssh-keygen -t rsa </code></pre>
+
+<p>You will need to name the file and give a passcode for the keys.</p>
+
+<pre><code>Enter file in which to save the key (/Users/DesmondPC/.ssh/id_rsa): &lt;Your Key Name&gt;
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in blah.
+Your public key has been saved in blah.pub.
+The key fingerprint is:	
+1b:69:20:15:a9:2b:46:9d:65:30:38:23:10:ca:df:d6
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
+|+. .o.oo         |
+|+ +  o+          |
+|.o +.=.          |
+|  o =... .       |
+| . . + ES        |
+|  o o  . o       |
+| . .    .        |
+|                 |
+|                 |
++-----------------+	</code></pre>
+
+<p>Now, you should have two files in <code>~/.ssh</code>, one with a file extension of .pub (your public key) and the other without (your private key).</p>
+
+<p><strong>Using your SSH keys for Authentication</strong></p>
+
+<p>Use the following command to tell ssh to use your new ssh key.</p>
+
+<pre><code>$ ssh-add ~/.ssh/&lt;YourKey&gt;</code></pre>
+
+<p><strong>Using SSH with Github</strong></p>
+
+<p>To use your newly generated ssh key with a service like Github, all you need to do is copy and paste your public key into the appropriate place.</p>
+
+<p><img src="/img/ssh_1.png" alt="Github Add Key" /></p>
+
+<p><img src="/img/ssh_2.png" alt="Github Add Key" /></p>
+
+<p><strong>Common Problems</strong></p>
+
+<p>To check to see if ssh is using a key</p>
+
+<pre><code>$ ssh-add -l</code></pre>
+
+<p>If it’s working, you should see something like:</p>
+
+<pre><code>2048 aa:01:aa:01:aa:01:aa:01:aa:01:aa:01:aa:01 /Users/myPC/.ssh/id_rsa (RSA)</code></pre>
+
+<p>One common issue that people run into while trying to authenticate using SSH keys is the following error:</p>
+
+<pre><code>$ ssh-add -l
+&gt; This agent has no identities</code></pre>
+
+<p>This means you didn’t tell ssh to use your key. Solve it with <code>$ ssh-add ~/path/to/key</code></p>
+
+<p>Another problem gives the following:</p>
+
+<pre><code>$ ssh-add ~/.ssh/&lt;YourKey&gt;
+&gt; Could not open a connection to your authentication agent</code></pre>
+
+<p>This means that you need to turn on your ssh agent. Run the following:</p>
+
+<pre><code>$ eval $(ssh-agent)
+$ ssh-add ~/.ssh/&lt;YourKey&gt;</code></pre>
+
+<p><strong>Did I get something wrong? <a href="mailto:desmondrduggan@gmail.com">Let me know if I did</a>!</strong></p>
+
+	
+
+    <div class="main-content content-landing">
+	    <p class="lead">OTHER POSTS</p>
+	    <ul class="project-list">
+	        
+				
+	        
+				
+				    <li><span>Apr 02</span><a href="/2014/04/02/My-Digital-Ocean-Droplet.html">My Digital Ocean Droplet</a></li>
+				
+	        
+				
+				    <li><span>Feb 15</span><a href="/2014/02/15/Arduino-Laundry-Monitor.html">Arduino Laundry Monitor</a></li>
+				
+	        
+				
+				    <li><span>Feb 01</span><a href="/2014/02/01/Hello-World.html">Hello World</a></li>
+				
+	        
+	    </ul>
+	</div>
+</section>
+
+
+        
+        </div>
+    </div>
+
+
+<script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    
+var drawer = document.getElementById( "page" ),
+drawerToggle = document.getElementById( "drawer-toggle"),
+body = document.body;
+
+$("#drawer-toggle").click(function() {
+    $("#page").toggleClass("page-push-right")
+    $("#drawer").toggleClass("drawer-push-right")
+    $("#drawer-toggle").toggleClass("drawer-toggle-selected")
+});
+
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40742051-1', 'auto');
+  ga('send', 'pageview');
+
+  $(document).ready( function(){
+
+    setTimeout( function() {
+        $('#drawer-toggle').addClass('animated bounce');
+    }, 1000);
+
+  
+  });
+
+</script>
+
+</body>
+
+
+
+
+</html>
+

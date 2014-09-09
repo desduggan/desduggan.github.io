@@ -131,8 +131,10 @@ a {
 
 /* Project listing stuff*/
 .main-content span {
-    padding-right: 2em;
+    padding-right: 1em;
     color: #979797;
+    width: 4em;
+    float: left;
 }
 
 .main-content a {
