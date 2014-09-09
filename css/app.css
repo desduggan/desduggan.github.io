@@ -336,3 +336,43 @@ a {
 #drawer-checkbox:checked + .drawer {
   visibility: visible;
 }
+
+
+
+
+/* CODE BLOCKS*/
+
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 0.9em;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 1.0em;
+    font-size: 0.9em;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 0.9em;
+    padding: 0;
+}
+
+
+/* POST CSS */
+img {
+    max-width: 100%;
+}

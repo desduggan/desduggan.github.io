@@ -64,9 +64,9 @@ Use the following command to tell ssh to use your new ssh key.
 
 To use your newly generated ssh key with a service like Github, all you need to do is copy and paste your public key into the appropriate place. 
 
-![Github Add Key](/img/ssh_1.png)
-
 ![Github Add Key](/img/ssh_2.png)
+
+![Github Add Key](/img/ssh_1.png)
 
 **Common Problems**
 
