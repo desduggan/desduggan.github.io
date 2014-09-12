@@ -6,8 +6,7 @@ excerpt: A short writeup on how to use SSH keys for authentication
 
 ---
 
-##  {{page.title}}
-### Short summary of SSH keys
+#  {{page.title}}
 The ssh authentication method works like the digital analogy of the [real-world lock and key system](http://www.gregmiller.net/locks/mitguide/chapter2.html). 
 
 The bronze key I use to unlock my front door at home uniquely matches the interior of that lock with a series of peaks and valleys etched on the top of the key. If I lose my key and I don't have any backups, I have to replace the lock because there is no way to reverse-engineer the key from the lock. 
@@ -16,7 +15,7 @@ The ssh system works in a similar way by generating a pair of files related thro
 
 To authenticate with a server, you first install your public key with it. Then, each time you care to authenticate, you securely send your private key to the server and it uses an algorithm to confirm that it matches with your public key. Since the relationship is unique, there isn't a way that someone else could guess your private key, and impersonate you. 
 
-### How to Use SSH Keys
+## Generating SSH Keypairs
 
 **Make an SSH directory**
 
@@ -54,11 +53,20 @@ You will need to name the file and give a passcode for the keys.
 	
 Now, you should have two files in `~/.ssh`, one with a file extension of .pub (your public key) and the other without (your private key). 
 
+## Using SSH Keypairs
+
 **Using your SSH keys for Authentication**
 
 Use the following command to tell ssh to use your new ssh key. 
 
 	$ ssh-add ~/.ssh/<YourKey>
+	
+Then, to "install" your keypair with a server, use the ssh-copy-id command. 
+	
+	$ ssh-copy-id <username>@<host>
+
+The above command will install your public key into the remote machine's `authorized_keys` file within ~/.ssh, thereby allowing you to use the key with you try to gain access to the server. 
+
 
 **Using SSH with Github**	
 
@@ -68,8 +76,7 @@ To use your newly generated ssh key with a service like Github, all you need to 
 
 ![Github Add Key](/img/ssh_1.png)
 
-**Common Problems**
-
+## Common Issues
 To check to see if ssh is using a key
 	
 	$ ssh-add -l

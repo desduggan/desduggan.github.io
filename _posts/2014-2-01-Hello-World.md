@@ -6,7 +6,7 @@ excerpt: My first post!
 
 ---
 
-##  {{page.title}}
+#  {{page.title}}
 
 Hello World! 
 

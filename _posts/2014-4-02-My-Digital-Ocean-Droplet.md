@@ -8,7 +8,7 @@ linkname: How To
 
 ---
 
-##  {{page.title}}
+# {{page.title}}
 
 Having a server to use as a sandbox for my side projects has been on my todo list for a while, but school work kept it a low priority until this weekend when I had some time to get one up and running. 
 

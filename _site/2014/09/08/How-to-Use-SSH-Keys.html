@@ -74,9 +74,8 @@
         <div class="wrapper container">
 
             <section class="content">
-	<h2 id="how_to_use_ssh_keys">How To Use SSH Keys</h2>
-
-<h3 id="short_summary_of_ssh_keys">Short summary of SSH keys</h3>
+	<p style="text-align:right; margin:0;">8 September 2014</p>
+	<h1 id="how_to_use_ssh_keys">How To Use SSH Keys</h1>
 
 <p>The ssh authentication method works like the digital analogy of the <a href="http://www.gregmiller.net/locks/mitguide/chapter2.html">real-world lock and key system</a>.</p>
 
@@ -86,7 +85,7 @@
 
 <p>To authenticate with a server, you first install your public key with it. Then, each time you care to authenticate, you securely send your private key to the server and it uses an algorithm to confirm that it matches with your public key. Since the relationship is unique, there isn’t a way that someone else could guess your private key, and impersonate you.</p>
 
-<h3 id="how_to_use_ssh_keys_2">How to Use SSH Keys</h3>
+<h2 id="generating_ssh_keypairs">Generating SSH Keypairs</h2>
 
 <p><strong>Make an SSH directory</strong></p>
 
@@ -125,11 +124,19 @@ The key&#39;s randomart image is:
 
 <p>Now, you should have two files in <code>~/.ssh</code>, one with a file extension of .pub (your public key) and the other without (your private key).</p>
 
+<h2 id="using_ssh_keypairs">Using SSH Keypairs</h2>
+
 <p><strong>Using your SSH keys for Authentication</strong></p>
 
 <p>Use the following command to tell ssh to use your new ssh key.</p>
 
 <pre><code>$ ssh-add ~/.ssh/&lt;YourKey&gt;</code></pre>
+
+<p>Then, to “install” your keypair with a server, use the ssh-copy-id command.</p>
+
+<pre><code>$ ssh-copy-id &lt;username&gt;@&lt;host&gt;</code></pre>
+
+<p>The above command will install your public key into the remote machine’s <code>authorized_keys</code> file within ~/.ssh, thereby allowing you to use the key with you try to gain access to the server.</p>
 
 <p><strong>Using SSH with Github</strong></p>
 
@@ -139,7 +146,7 @@ The key&#39;s randomart image is:
 
 <p><img src="/img/ssh_1.png" alt="Github Add Key" /></p>
 
-<p><strong>Common Problems</strong></p>
+<h2 id="common_issues">Common Issues</h2>
 
 <p>To check to see if ssh is using a key</p>
 
@@ -173,6 +180,10 @@ $ ssh-add ~/.ssh/&lt;YourKey&gt;</code></pre>
     <div class="main-content content-landing">
 	    <p class="lead">OTHER POSTS</p>
 	    <ul class="project-list">
+	        
+				
+				    <li><span>Sep 11</span><a href="/2014/09/11/How-to_Install-Cassandra.html">Cassandra and Ubuntu</a></li>
+				
 	        
 				
 	        

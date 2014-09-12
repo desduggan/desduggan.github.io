@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+<!-- 
+    Author: Desmond Duggan 2014
+    Inspiration from Hila Peleg hilapeleg.io
+ -->
+
+    <!-- Meta stuff -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>  Cassandra and Ubuntu |  Desmond Duggan </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/modernscale.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+
+</head>
+
+
+<input class="drawer-checkbox" id="drawer-checkbox" type="checkbox">
+
+    <body id="page">        
+    <nav id="drawer" class="drawer">
+        <div class="drawer-content">
+            <div class="padding-1">
+                <div class="drawer-header">
+                    <img id="small-picture" src="/img/me.png">
+                    <h4 class="name">Desmond <br> Duggan</h4>  
+                </div>
+
+                <p class="summary">Desmond is a technology consultant working with the Accenture Technology Labs in San Jose, California. </p>
+            </div>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li > <a href="/">Home</a>
+                        </li>
+                    
+                
+                    
+                        <li > <a href="/posts">All Posts</a>
+                        </li>
+                    
+                
+            </ul>
+
+            <div class="dash-light"></div>                       
+
+            <div class="outlinks">
+                <ul>
+                    <li><a href="http://www.linkedin.com/pub/desmond-duggan/28/3ab/39a">LinkedIn</a></li>
+                    <li><a href="http://github.com/drduggan">Github</a></li>
+                    <li><a href="mailto:desmondrduggan@gmail.com">Gmail</a></li>
+                </ul>
+            </div>
+            
+            <div class="padding-1">
+                <p style="font-size: .8em; text-align:center;">&copy; All Rights Reserved 2014</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+            <label class="drawer-toggle" id="drawer-toggle" for="drawer-checkbox"></label>
+        <!-- <a class="drawer-toggle" id="drawer-toggle"></a> -->
+        <div class="wrapper container">
+
+            <section class="content">
+	<p style="text-align:right; margin:0;">11 September 2014</p>
+	<h1 id="cassandra_and_ubuntu">Cassandra and Ubuntu</h1>
+
+<p>According to its original publication, Cassandra is <a href="https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf">“A Decentralized Structured Storage System</a>.” Let’s break that down.</p>
+
+<p>Cassandra is a <strong>Structured Storage System</strong>:</p>
+
+<p>Similar to a database like MySQL or Postgres, the Cassandra system stores data that looks a certain way. This means that data values like a ‘Bill’ or a ‘94107’ are referenced within the data model by their keys, ‘first_name’ and ‘zip_code,’ respectively. Furthermore, the Cassandra system has a specific way in which the data model has to be organized.</p>
+
+<p>That is <strong>Decentralized</strong>:</p>
+
+<p>Decentralized means that the data can be split up among an arbitrary number of servers, typically referred to as “Commodity Servers,” since they are viewed as commodities that, for a price, can be easily obtained and added to the network.</p>
+
+<p>Each server in the system is then declared responsible for a certain portion of the data, determined by a hashing algorithm.</p>
+
+<h3 id="installing_java">Installing Java</h3>
+
+<p>To get Cassandra up and running, we need to first install Java 7 or above, as specified by the Cassandra 2.0 documentation. Now, for those of you who are like me and can’t keep the Java acronyms together. We specifically want the <strong>Java Platform, Standard Edition (Java SE 7)</strong> or above.</p>
+
+<p>You can grab the most recent version of Java at <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.</p>
+
+<p>On this page, you will find three version of Java SE:</p>
+
+<ol>
+<li>JDK: used by developers to debug and build Java applications.</li>
+
+<li><strong>Server JRE</strong>: for deploying Java applications on a server. <em>(Sounds Familiar)</em></li>
+
+<li>JRE: runs barebones Java on your system.</li>
+</ol>
+
+<p>Download the <strong>Server JRE</strong> .tar.gz file.</p>
+
+<p><em>At the time that I’m writing this, the most up to date version for Java is 1.8.0_20, and that’s what I’ll be using here. You may have to substitute this version where appropriate for you.</em></p>
+
+<p>Upload the tarball to your home directory on the server.</p>
+
+<pre><code>$ scp server-jre-8u20-linux-x64.tar.gz &lt;user&gt;@your.server.ip.address:~</code></pre>
+
+<h4 id="server_installation">Server Installation</h4>
+
+<p>Here, you will need sudo privileges:</p>
+
+<pre><code>$ sudo su</code></pre>
+
+<p>Extract Java to the optional packages directory:</p>
+
+<pre><code>$ mkdir /opt/jdk
+$ tar -zxf server-jre-8u20-linux-x64.tar.gz -C /opt/jdk/
+
+# Sanity check
+$ ls /opt/jdk/</code></pre>
+
+<p>Let your server know that a new Java installation exists and give each item a priority (of 100 in this case).</p>
+
+<pre><code>$ update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_20/bin/java 100
+$ update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_20/bin/javac 100</code></pre>
+
+<p>Finally, choose the default version of Java to use. This is especially important if you have any previous installations of Java.</p>
+
+<pre><code>$ update-alternatives --config java</code></pre>
+
+<p>In the case that you <em>do</em> have more than one installation, this prompt will show you something like</p>
+
+<pre><code>$ update-alternatives --config java
+There are 3 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+* 0            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      auto mode
+  1            /opt/jdk/jdk1.8.0_20/bin/java                    110       manual mode
+  2            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
+  3            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1051      manual mode
+
+Press enter to keep the current choice[*], or type selection number: 1	</code></pre>
+
+<p>Confirm that everything worked.</p>
+
+<pre><code>$ update-alternatives --display java
+...
+$ update-alternatives --display javac
+...
+
+$ java -version
+java version &quot;1.8.0_20&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
+Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)</code></pre>
+
+<h3 id="installing_cassandra">Installing Cassandra</h3>
+
+<p>First, download the Cassandra tarball at <a href="http://cassandra.apache.org/download/">http://cassandra.apache.org/download/</a>, and upload this to your server:</p>
+
+<pre><code>$ scp apache-cassandra-2.0.10-bin.tar.gz &lt;user&gt;@your.server.ip.address:~</code></pre>
+
+<p>Or, use wget:</p>
+
+<pre><code>$ wget http://apache.mirrors.pair.com/cassandra/2.0.10/apache-cassandra-2.0.10-bin.tar.gz</code></pre>
+
+<p>Then, extract the tarball to a Cassandra folder:</p>
+
+<pre><code>$ tar -xvzf apache-cassandra-2.0.10-bin.tar.gz
+$ mv apache-cassandra-2.0.10 ~/cassandra</code></pre>
+
+<h4 id="setup">Setup</h4>
+
+<p>To get Cassandra up and running, we have to do a little setup.</p>
+
+<p>First, <a href="https://wiki.apache.org/cassandra/GettingStarted">Cassandra documentation</a> dictates that Cassandra maintains its logs and other data in the following directories:</p>
+
+<pre><code>$ sudo mkdir /var/lib/cassandra
+$ sudo mkdir /var/log/cassandra
+$ sudo chown -R $USER:$GROUP /var/lib/cassandra
+$ sudo chown -R $USER:$GROUP /var/log/cassandra</code></pre>
+
+<p>Finally, edit your bash profile to include Cassandra on your $PATH.</p>
+
+<pre><code>$ vi ~/.bash_profile</code></pre>
+
+<p>and add</p>
+
+<pre><code># Cassandra path
+CASSANDRA_HOME=~/cassandra
+PATH=$PATH:$CASSANDRA_HOME/bin	</code></pre>
+
+<p>Reload your bash profile:</p>
+
+<pre><code>$ source ~/.bash_profile</code></pre>
+
+<h3 id="running_cassandra">Running Cassandra</h3>
+
+<p>Start the Cassandra process with</p>
+
+<pre><code>$ cassandra</code></pre>
+
+<p>End the Cassandra process with</p>
+
+<pre><code>$ pkill -f CassandraDaemon</code></pre>
+
+<p>Access the Cassandra shell with</p>
+
+<pre><code>$ cqlsh
+Connected to Test Cluster at localhost:9160.
+[cqlsh 4.1.1 | Cassandra 2.0.10 | CQL spec 3.1.1 | Thrift protocol 19.39.0]
+Use HELP for help.	</code></pre>
+
+<p>Now, go store some data!</p>
+
+<p><strong>Did I get something wrong? <a href="mailto:desmondrduggan@gmail.com">Let me know if I did</a>!</strong></p>
+
+<p>Resources:</p>
+
+<ul>
+<li><a href="https://wiki.apache.org/cassandra/GettingStarted">https://wiki.apache.org/cassandra/GettingStarted</a></li>
+
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
+
+<li><a href="https://wiki.apache.org/cassandra/GettingStarted">Getting Started with Cassandra</a></li>
+</ul>
+
+	
+
+    <div class="main-content content-landing">
+	    <p class="lead">OTHER POSTS</p>
+	    <ul class="project-list">
+	        
+				
+	        
+				
+				    <li><span>Sep 08</span><a href="/2014/09/08/How-to-Use-SSH-Keys.html">How To Use SSH Keys</a></li>
+				
+	        
+				
+				    <li><span>Apr 02</span><a href="/2014/04/02/My-Digital-Ocean-Droplet.html">My Digital Ocean Droplet</a></li>
+				
+	        
+				
+				    <li><span>Feb 15</span><a href="/2014/02/15/Arduino-Laundry-Monitor.html">Arduino Laundry Monitor</a></li>
+				
+	        
+				
+				    <li><span>Feb 01</span><a href="/2014/02/01/Hello-World.html">Hello World</a></li>
+				
+	        
+	    </ul>
+	</div>
+</section>
+
+
+        
+        </div>
+    </div>
+
+
+<script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    
+var drawer = document.getElementById( "page" ),
+drawerToggle = document.getElementById( "drawer-toggle"),
+body = document.body;
+
+$("#drawer-toggle").click(function() {
+    $("#page").toggleClass("page-push-right")
+    $("#drawer").toggleClass("drawer-push-right")
+    $("#drawer-toggle").toggleClass("drawer-toggle-selected")
+});
+
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40742051-1', 'auto');
+  ga('send', 'pageview');
+
+  $(document).ready( function(){
+
+    setTimeout( function() {
+        $('#drawer-toggle').addClass('animated bounce');
+    }, 1000);
+
+  });
+
+</script>
+
+</body>
+
+
+
+
+</html>
+

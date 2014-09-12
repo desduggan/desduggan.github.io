@@ -8,7 +8,7 @@ linkname: Code on Github
 
 ---
 
-##  {{page.title}}
+#  {{page.title}}
 
 How many times have you been frustrated by trying to find an open laundry machine on a college campus? My answer to that question is: A LOT. For my Junior and Senior years at school, I lived in my fraternity house with 37 other guys. It was great fun except when Sunday rolled around, and you needed to use one of the two laundry machines in the house. 
 
