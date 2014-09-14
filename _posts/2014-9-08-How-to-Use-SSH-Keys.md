@@ -61,8 +61,9 @@ Use the following command to tell ssh to use your new ssh key.
 
 	$ ssh-add ~/.ssh/<YourKey>
 	
-Then, to "install" your keypair with a server, use the ssh-copy-id command. 
+Then, to "install" your keypair with a server, download ssh-copy-id with Brew and run it. 
 	
+	$ brew install ssh-copy-id
 	$ ssh-copy-id <username>@<host>
 
 The above command will install your public key into the remote machine's `authorized_keys` file within ~/.ssh, thereby allowing you to use the key with you try to gain access to the server. 
