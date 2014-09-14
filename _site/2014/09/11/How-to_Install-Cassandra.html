@@ -75,25 +75,25 @@
 
             <section class="content">
 	<p style="text-align:right; margin:0;">11 September 2014</p>
-	<h1 id="cassandra_and_ubuntu">Cassandra and Ubuntu</h1>
+	<h1 id='cassandra_and_ubuntu'>Cassandra and Ubuntu</h1>
 
-<p>According to its original publication, Cassandra is <a href="https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf">“A Decentralized Structured Storage System</a>.” Let’s break that down.</p>
+<p>According to its original publication, Cassandra is <a href='https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf'>&#8220;A Decentralized Structured Storage System</a>.&#8221; Let&#8217;s break that down.</p>
 
 <p>Cassandra is a <strong>Structured Storage System</strong>:</p>
 
-<p>Similar to a database like MySQL or Postgres, the Cassandra system stores data that looks a certain way. This means that data values like a ‘Bill’ or a ‘94107’ are referenced within the data model by their keys, ‘first_name’ and ‘zip_code,’ respectively. Furthermore, the Cassandra system has a specific way in which the data model has to be organized.</p>
+<p>Similar to a database like MySQL or Postgres, the Cassandra system stores data that looks a certain way. This means that data values like a &#8216;Bill&#8217; or a &#8216;94107&#8217; are referenced within the data model by their keys, &#8216;first_name&#8217; and &#8216;zip_code,&#8217; respectively. Furthermore, the Cassandra system has a specific way in which the data model has to be organized.</p>
 
 <p>That is <strong>Decentralized</strong>:</p>
 
-<p>Decentralized means that the data can be split up among an arbitrary number of servers, typically referred to as “Commodity Servers,” since they are viewed as commodities that, for a price, can be easily obtained and added to the network.</p>
+<p>Decentralized means that the data can be split up among an arbitrary number of servers, typically referred to as &#8220;Commodity Servers,&#8221; since they are viewed as commodities that, for a price, can be easily obtained and added to the network.</p>
 
 <p>Each server in the system is then declared responsible for a certain portion of the data, determined by a hashing algorithm.</p>
 
-<h3 id="installing_java">Installing Java</h3>
+<h3 id='installing_java'>Installing Java</h3>
 
-<p>To get Cassandra up and running, we need to first install Java 7 or above, as specified by the Cassandra 2.0 documentation. Now, for those of you who are like me and can’t keep the Java acronyms together. We specifically want the <strong>Java Platform, Standard Edition (Java SE 7)</strong> or above.</p>
+<p>To get Cassandra up and running, we need to first install Java 7 or above, as specified by the Cassandra 2.0 documentation. Now, for those of you who are like me and can&#8217;t keep the Java acronyms together. We specifically want the <strong>Java Platform, Standard Edition (Java SE 7)</strong> or above.</p>
 
-<p>You can grab the most recent version of Java at <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.</p>
+<p>You can grab the most recent version of Java at <a href='http://www.oracle.com/technetwork/java/javase/downloads/index.html'>http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.</p>
 
 <p>On this page, you will find three version of Java SE:</p>
 
@@ -107,13 +107,13 @@
 
 <p>Download the <strong>Server JRE</strong> .tar.gz file.</p>
 
-<p><em>At the time that I’m writing this, the most up to date version for Java is 1.8.0_20, and that’s what I’ll be using here. You may have to substitute this version where appropriate for you.</em></p>
+<p><em>At the time that I&#8217;m writing this, the most up to date version for Java is 1.8.0_20, and that&#8217;s what I&#8217;ll be using here. You may have to substitute this version where appropriate for you.</em></p>
 
 <p>Upload the tarball to your home directory on the server.</p>
 
 <pre><code>$ scp server-jre-8u20-linux-x64.tar.gz &lt;user&gt;@your.server.ip.address:~</code></pre>
 
-<h4 id="server_installation">Server Installation</h4>
+<h4 id='server_installation'>Server Installation</h4>
 
 <p>Here, you will need sudo privileges:</p>
 
@@ -161,9 +161,9 @@ java version &quot;1.8.0_20&quot;
 Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
 Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)</code></pre>
 
-<h3 id="installing_cassandra">Installing Cassandra</h3>
+<h3 id='installing_cassandra'>Installing Cassandra</h3>
 
-<p>First, download the Cassandra tarball at <a href="http://cassandra.apache.org/download/">http://cassandra.apache.org/download/</a>, and upload this to your server:</p>
+<p>First, download the Cassandra tarball at <a href='http://cassandra.apache.org/download/'>http://cassandra.apache.org/download/</a>, and upload this to your server:</p>
 
 <pre><code>$ scp apache-cassandra-2.0.10-bin.tar.gz &lt;user&gt;@your.server.ip.address:~</code></pre>
 
@@ -176,11 +176,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)</code></pre>
 <pre><code>$ tar -xvzf apache-cassandra-2.0.10-bin.tar.gz
 $ mv apache-cassandra-2.0.10 ~/cassandra</code></pre>
 
-<h4 id="setup">Setup</h4>
+<h4 id='setup'>Setup</h4>
 
 <p>To get Cassandra up and running, we have to do a little setup.</p>
 
-<p>First, <a href="https://wiki.apache.org/cassandra/GettingStarted">Cassandra documentation</a> dictates that Cassandra maintains its logs and other data in the following directories:</p>
+<p>First, <a href='https://wiki.apache.org/cassandra/GettingStarted'>Cassandra documentation</a> dictates that Cassandra maintains its logs and other data in the following directories:</p>
 
 <pre><code>$ sudo mkdir /var/lib/cassandra
 $ sudo mkdir /var/log/cassandra
@@ -201,7 +201,7 @@ PATH=$PATH:$CASSANDRA_HOME/bin	</code></pre>
 
 <pre><code>$ source ~/.bash_profile</code></pre>
 
-<h3 id="running_cassandra">Running Cassandra</h3>
+<h3 id='running_cassandra'>Running Cassandra</h3>
 
 <p>Start the Cassandra process with</p>
 
@@ -220,16 +220,22 @@ Use HELP for help.	</code></pre>
 
 <p>Now, go store some data!</p>
 
-<p><strong>Did I get something wrong? <a href="mailto:desmondrduggan@gmail.com">Let me know if I did</a>!</strong></p>
+<p><strong>Did I get something wrong? <a href='mailto:desmondrduggan@gmail.com'>Let me know if I did</a>!</strong></p>
 
 <p>Resources:</p>
 
 <ul>
-<li><a href="https://wiki.apache.org/cassandra/GettingStarted">https://wiki.apache.org/cassandra/GettingStarted</a></li>
+<li>
+<p><a href='https://wiki.apache.org/cassandra/GettingStarted'>https://wiki.apache.org/cassandra/GettingStarted</a></p>
+</li>
 
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
+<li>
+<p><a href='http://www.oracle.com/technetwork/java/javase/downloads/index.html'>http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+</li>
 
-<li><a href="https://wiki.apache.org/cassandra/GettingStarted">Getting Started with Cassandra</a></li>
+<li>
+<p><a href='https://wiki.apache.org/cassandra/GettingStarted'>Getting Started with Cassandra</a></p>
+</li>
 </ul>
 
 	
