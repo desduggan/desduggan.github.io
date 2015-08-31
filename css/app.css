@@ -2,12 +2,7 @@
 * Created by Desmond Duggan 2014
 * Credit for drawer checkbox to @mdo https://github.com/poole/lanyon.
 *
-*
-*
-*
 */
-
-
 
 /*Fonts*/
 @font-face {
@@ -41,6 +36,7 @@
 
 html, body {
     min-height: 100%;
+    height: 100%;
     width: 100%;
     overflow-x: hidden;
     font-family: 'ProximaNova-Thin', sans-serif;

@@ -33,7 +33,7 @@
                     <h4 class="name">Desmond <br> Duggan</h4>  
                 </div>
 
-                <p class="summary">Desmond is a technology consultant working with the Accenture Technology Labs in San Jose, California. </p>
+                <p class="summary">I am a software engineer living in San Francisco and working with Accenture’s global R&D organization. </p>
             </div>
 
             <ul>
@@ -57,13 +57,13 @@
             <div class="outlinks">
                 <ul>
                     <li><a href="http://www.linkedin.com/pub/desmond-duggan/28/3ab/39a">LinkedIn</a></li>
-                    <li><a href="http://github.com/drduggan">Github</a></li>
+                    <li><a href="http://github.com/desduggan">Github</a></li>
                     <li><a href="mailto:desmondrduggan@gmail.com">Gmail</a></li>
                 </ul>
             </div>
             
             <div class="padding-1">
-                <p style="font-size: .8em; text-align:center;">&copy; All Rights Reserved 2014</p>
+                <p style="font-size: .8em; text-align:center;">&copy; All Rights Reserved 2015</p>
             </div>
         </div>
     </nav>
@@ -75,41 +75,39 @@
 
             <section class="content">
 	<p style="text-align:right; margin:0;">8 September 2014</p>
-	<h1 id='how_to_use_ssh_keys'>How To Use SSH Keys</h1>
+	<h1 id="how-to-use-ssh-keys">How To Use SSH Keys</h1>
+<p>The ssh authentication method works like the digital analogy of the <a href="http://www.gregmiller.net/locks/mitguide/chapter2.html">real-world lock and key system</a>.</p>
 
-<p>The ssh authentication method works like the digital analogy of the <a href='http://www.gregmiller.net/locks/mitguide/chapter2.html'>real-world lock and key system</a>.</p>
+<p>The bronze key I use to unlock my front door at home uniquely matches the interior of that lock with a series of peaks and valleys etched on the top of the key. If I lose my key and I don’t have any backups, I have to replace the lock because there is no way to reverse-engineer the key from the lock.</p>
 
-<p>The bronze key I use to unlock my front door at home uniquely matches the interior of that lock with a series of peaks and valleys etched on the top of the key. If I lose my key and I don&#8217;t have any backups, I have to replace the lock because there is no way to reverse-engineer the key from the lock.</p>
+<p>The ssh system works in a similar way by generating a pair of files related through a that are analogous to a key and lock. The first file is private, only to be used when trying to “unlock the door.” The second file is public and is basically a digital “lock,” which you can distribute to as many “doors” as you want.</p>
 
-<p>The ssh system works in a similar way by generating a pair of files related through a that are analogous to a key and lock. The first file is private, only to be used when trying to &#8220;unlock the door.&#8221; The second file is public and is basically a digital &#8220;lock,&#8221; which you can distribute to as many &#8220;doors&#8221; as you want.</p>
+<p>To authenticate with a server, you first install your public key with it. Then, each time you care to authenticate, you securely send your private key to the server and it uses an algorithm to confirm that it matches with your public key. Since the relationship is unique, there isn’t a way that someone else could guess your private key, and impersonate you.</p>
 
-<p>To authenticate with a server, you first install your public key with it. Then, each time you care to authenticate, you securely send your private key to the server and it uses an algorithm to confirm that it matches with your public key. Since the relationship is unique, there isn&#8217;t a way that someone else could guess your private key, and impersonate you.</p>
-
-<h2 id='generating_ssh_keypairs'>Generating SSH Keypairs</h2>
+<h2 id="generating-ssh-keypairs">Generating SSH Keypairs</h2>
 
 <p><strong>Make an SSH directory</strong></p>
 
-<p>If you&#8217;ve never used ssh before, create a <code>.ssh</code> folder in your home directory. This location isn&#8217;t required, but it&#8217;s accepted practice.</p>
+<p>If you’ve never used ssh before, create a <code>.ssh</code> folder in your home directory. This location isn’t required, but it’s accepted practice.</p>
 
-<pre><code>$ mkdir ~/.ssh</code></pre>
+<pre><code>$ mkdir ~/.ssh
+</code></pre>
 
 <p><strong>Generate SSH Keys</strong></p>
 
-<p>Use the following command to go to your .ssh directory generate an SSH key pair using the <a href='http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29'>RSA algorithm</a>.</p>
+<p>Use the following command to go to your .ssh directory generate an SSH key pair using the <a href="http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29">RSA algorithm</a>.</p>
 
 <pre><code>$ cd ~/.ssh 
-$ ssh-keygen -t rsa </code></pre>
+$ ssh-keygen -t rsa  You will need to name the file and give a passcode for the keys. 
 
-<p>You will need to name the file and give a passcode for the keys.</p>
-
-<pre><code>Enter file in which to save the key (/Users/DesmondPC/.ssh/id_rsa): &lt;Your Key Name&gt;
+Enter file in which to save the key (/Users/DesmondPC/.ssh/id_rsa): &lt;Your Key Name&gt;
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 Your identification has been saved in blah.
 Your public key has been saved in blah.pub.
 The key fingerprint is:	
 1b:69:20:15:a9:2b:46:9d:65:30:38:23:10:ca:df:d6
-The key&#39;s randomart image is:
+The key's randomart image is:
 +--[ RSA 2048]----+
 |+. .o.oo         |
 |+ +  o+          |
@@ -120,61 +118,69 @@ The key&#39;s randomart image is:
 | . .    .        |
 |                 |
 |                 |
-+-----------------+	</code></pre>
++-----------------+	
+</code></pre>
 
 <p>Now, you should have two files in <code>~/.ssh</code>, one with a file extension of .pub (your public key) and the other without (your private key).</p>
 
-<h2 id='using_ssh_keypairs'>Using SSH Keypairs</h2>
+<h2 id="using-ssh-keypairs">Using SSH Keypairs</h2>
 
 <p><strong>Using your SSH keys for Authentication</strong></p>
 
 <p>Use the following command to tell ssh to use your new ssh key.</p>
 
-<pre><code>$ ssh-add ~/.ssh/&lt;YourKey&gt;</code></pre>
+<pre><code>$ ssh-add ~/.ssh/&lt;YourKey&gt;
+</code></pre>
 
-<p>Then, to &#8220;install&#8221; your keypair with a server, download ssh-copy-id with Brew and run it.</p>
+<p>Then, to “install” your keypair with a server, download ssh-copy-id with Brew and run it.</p>
 
 <pre><code>$ brew install ssh-copy-id
-$ ssh-copy-id &lt;username&gt;@&lt;host&gt;</code></pre>
+$ ssh-copy-id &lt;username&gt;@&lt;host&gt;
+</code></pre>
 
-<p>The above command will install your public key into the remote machine&#8217;s <code>authorized_keys</code> file within ~/.ssh, thereby allowing you to use the key with you try to gain access to the server.</p>
+<p>The above command will install your public key into the remote machine’s <code>authorized_keys</code> file within ~/.ssh, thereby allowing you to use the key with you try to gain access to the server.</p>
 
 <p><strong>Using SSH with Github</strong></p>
 
 <p>To use your newly generated ssh key with a service like Github, all you need to do is copy and paste your public key into the appropriate place.</p>
 
-<p><img src='/img/ssh_2.png' alt='Github Add Key' /></p>
+<p><img src="/img/ssh_2.png" alt="Github Add Key" /></p>
 
-<p><img src='/img/ssh_1.png' alt='Github Add Key' /></p>
+<p><img src="/img/ssh_1.png" alt="Github Add Key" /></p>
 
-<h2 id='common_issues'>Common Issues</h2>
-
+<h2 id="common-issues">Common Issues</h2>
 <p>To check to see if ssh is using a key</p>
 
-<pre><code>$ ssh-add -l</code></pre>
+<pre><code>$ ssh-add -l
+</code></pre>
 
-<p>If it&#8217;s working, you should see something like:</p>
+<p>If it’s working, you should see something like:</p>
 
-<pre><code>2048 aa:01:aa:01:aa:01:aa:01:aa:01:aa:01:aa:01 /Users/myPC/.ssh/id_rsa (RSA)</code></pre>
+<pre><code>2048 aa:01:aa:01:aa:01:aa:01:aa:01:aa:01:aa:01 /Users/myPC/.ssh/id_rsa (RSA)
+</code></pre>
 
 <p>One common issue that people run into while trying to authenticate using SSH keys is the following error:</p>
 
 <pre><code>$ ssh-add -l
-&gt; This agent has no identities</code></pre>
+&gt; This agent has no identities
+</code></pre>
 
-<p>This means you didn&#8217;t tell ssh to use your key. Solve it with <code>$ ssh-add ~/path/to/key</code></p>
+<p>This means you didn’t tell ssh to use your key. Solve it with <code>$ ssh-add ~/path/to/key</code></p>
 
 <p>Another problem gives the following:</p>
 
 <pre><code>$ ssh-add ~/.ssh/&lt;YourKey&gt;
-&gt; Could not open a connection to your authentication agent</code></pre>
+&gt; Could not open a connection to your authentication agent
+</code></pre>
 
 <p>This means that you need to turn on your ssh agent. Run the following:</p>
 
 <pre><code>$ eval $(ssh-agent)
-$ ssh-add ~/.ssh/&lt;YourKey&gt;</code></pre>
+$ ssh-add ~/.ssh/&lt;YourKey&gt;
+</code></pre>
 
-<p><strong>Did I get something wrong? <a href='mailto:desmondrduggan@gmail.com'>Let me know if I did</a>!</strong></p>
+<p><strong>Did I get something wrong?  <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#101;&#115;&#109;&#111;&#110;&#100;&#114;&#100;&#117;&#103;&#103;&#097;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">Let me know if I did</a>!</strong></p>
+
 
 	
 
@@ -238,9 +244,9 @@ $("#drawer-toggle").click(function() {
 
   $(document).ready( function(){
 
-    setTimeout( function() {
-        $('#drawer-toggle').addClass('animated bounce');
-    }, 1000);
+    // setTimeout( function() {
+    //     $('#drawer-toggle').addClass('animated bounce');
+    // }, 1000);
 
   });
 

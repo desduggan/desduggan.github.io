@@ -1,6 +1,4 @@
 source :rubygems
-gem 'jekyll-s3'
+gem 's3_website'
 gem 'jekyll'
-gem 'RedCloth'
-gem 'jekyll-press'
 gem 'rdiscount'
