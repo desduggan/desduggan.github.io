@@ -60,9 +60,9 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'ProximaNova-Semibold', sans-serif;
 }
 
-a {
+.content-landing a {
     text-decoration: none;
-    color: #2ECC71;
+    color: #2ECC71 !important;
 }
 
 

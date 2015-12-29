@@ -5,28 +5,29 @@ nav: /
 ---
 
 <section class="content">
-            <div class="main-header content-landing">
-                <h1 class="name">Desmond Duggan</h1> 
-                <div class="dash"></div>                       
-            </div>
-<section class="content">
-    <div class="main-content content-landing">
-        <p>Hello! Thanks for visiting. Here's a bit about me. If you want to reach out, shoot me a <a href="mailto:desmondrduggan@gmail.com">mail</a>. </p>
-<p>I am a software engineer living in San Francisco and working with Accenture’s global R&D organization. 
-</p>
-<p>I code full stack mostly in Python and Javascript with an eye for design, and I bring ideas from a pencil sketch to docker deployment with PEP 8 in mind. 
-</p>
-<p>I love building beautiful and impactful software with smart people. Outside of work, I am a triathlete trying to hack my mind and body.            
-</p>
+    <div class="main-header content-landing">
+        <h1 class="name">Des Duggan</h1> 
+        <div class="dash"></div>                       
     </div>
-</section>            
-            <div class="main-content content-landing">
-                <p class="lead">RECENT POSTS</p>
-                <ul class="project-list">
-                    {% for post in site.posts limit:5 %}
-                        <li><span>{{post.date | date: "%b %d"}}</span><a href="{{post.url}}">{{post.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                <a href="/posts">More</a>
-            </div>
+    <section class="content">
+        <div class="main-content content-landing">
+            <p>Hi, thanks for stopping by. Here's a bit about me: </p>
+            <p>I am an architect and product evangelist leading first-of-its-kind deliveries in London and San Francisco. </p>
+
+            <p>At work, I code, design and lead teams solving big hairy problems for the global 2000. </p>
+
+            <p>Outside of work, I ski steep & deep and compete as a triathlete. </p>
+
+            <p><a href="mailto:desmondrduggan@gmail.com">Send a note</a> if you want to chat. </p>
+        </div>
+    </section>            
+    <div class="main-content content-landing">
+        <p class="lead">RECENT POSTS</p>
+        <ul class="project-list">
+            {% for post in site.posts limit:5 %}
+            <li><span>{{post.date | date: "%b %d"}}</span><a href="{{post.url}}">{{post.title}}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/posts">More</a>
+    </div>
 </section>
