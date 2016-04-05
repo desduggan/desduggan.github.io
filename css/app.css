@@ -53,7 +53,32 @@ html, body {
     height: 100%;
     position: relative;
     left: 0;
+
+    min-width: 320px;
+    line-height: 1;
+    min-height: 100vh;
+    word-wrap: break-word;
+    background-attachment: fixed;
+    background-image: linear-gradient(60deg, rgba(255, 165, 150, 0.501961) 9%, rgba(0, 228, 255, 0.352941) 100%), url("/img/yose.jpg");
+    background-size: cover, cover;
+    background-position: 0% 0%, 50% 50%;
+    background-repeat: repeat, no-repeat;
+    overflow: visible;    
     /*background-color: #B84C41;*/
+}
+#page::before {
+    display: block;
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(194, 208, 215);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.25s ease-in-out 0s, visibility 1.25s 0s;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -114,16 +139,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Little dash on the page */
 .dash {
     border-bottom: 3px solid #272627;
-    margin: 35px auto auto;
+    margin: 24px auto auto;
     overflow: visible;
     width: 30px;
 }
 
 .dash-light {
-    border-bottom: 3px solid #EFEFEF;
-    margin: 15px auto 15px auto;
+    border-bottom: 2px solid #b0b4b8;
+    margin: 24px auto 15px auto;
     overflow: visible;
-    width: 30px;
+    width: 60px;
 }
 
 /* Project listing stuff*/
@@ -147,7 +172,74 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5em;
 }
 
+/* ------------------ Panel --------------------*/
 
+.content { 
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+}
+
+.main-panel {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    width: 23rem;    
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.929412);
+    border-radius: 0.375rem;
+    transition: all 1s ease 0s;
+    transform: perspective(1000px) rotateX(0deg);
+    transform-origin: 50% 50% 0px;    
+}
+
+.main-panel .inner {
+    padding: 3.125rem 2.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.main-panel h3 {
+    margin: 12px 0;
+}
+
+img.circle {
+    height: 120px;
+    border-radius: 50%;
+}
+
+.main-panel h4 {
+    text-transform: uppercase;
+    font-family: 'ProximaNova-Thin';
+    color: #b0b4b8;
+}
+
+.main-panel .link-wrapper {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    max-width: 6em;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.link-wrapper a i{
+    padding: 10px 12px;
+    font-size: 20px;
+    color: #c8cccf;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px #c8cccf;
+}
 /* ------------------------- Drawer css -------------------------*/
 
 

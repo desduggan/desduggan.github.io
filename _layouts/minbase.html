@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>  Home |  Desmond Duggan </title>
+    <title> {% if page.title %} {{ page.title }} | {% endif %} Desmond Duggan </title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -22,20 +22,7 @@
 </head>
 
 <body id="page">        
-    <section class="content">
-    <div class="main-panel">
-        <div class="inner">
-            <img src="/img/des.jpg" alt="" class="circle">
-            <h3 class="name">Des Duggan</h3>
-            <div class="dash-light"></div>
-            <h4>Product Person and Triathlete</h4>
-            <div class="link-wrapper">
-                <a href="https://www.github.com/desduggan"><i class="fa fa-github fa-2x"></i></a>
-                <a href="https://www.linkedin.com/in/desmondrduggan"><i class="fa fa-linkedin fa-2x"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
+    {{ content }}
 </div>
 
 

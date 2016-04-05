@@ -1,33 +1,20 @@
 ---
-layout: base
+layout: minbase
 title: Home
 nav: /
 ---
 
 <section class="content">
-    <div class="main-header content-landing">
-        <h1 class="name">Des Duggan</h1> 
-        <div class="dash"></div>                       
-    </div>
-    <section class="content">
-        <div class="main-content content-landing">
-            <p>Hi, thanks for stopping by. Here's a bit about me: </p>
-            <p>I am an architect and product evangelist leading first-of-its-kind deliveries in London and San Francisco. </p>
-
-            <p>At work, I code, design and lead teams solving big hairy problems for the global 2000. </p>
-
-            <p>Outside of work, I ski steep & deep and compete as a triathlete. </p>
-
-            <p><a href="mailto:desmondrduggan@gmail.com">Send a note</a> if you want to chat. </p>
+    <div class="main-panel">
+        <div class="inner">
+            <img src="/img/des.jpg" alt="" class="circle">
+            <h3 class="name">Des Duggan</h3>
+            <div class="dash-light"></div>
+            <h4>Product Person and Triathlete</h4>
+            <div class="link-wrapper">
+                <a href="https://www.github.com/desduggan"><i class="fa fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/desmondrduggan"><i class="fa fa-linkedin fa-2x"></i></a>
+            </div>
         </div>
-    </section>            
-    <div class="main-content content-landing">
-        <p class="lead">RECENT POSTS</p>
-        <ul class="project-list">
-            {% for post in site.posts limit:5 %}
-            <li><span>{{post.date | date: "%b %d"}}</span><a href="{{post.url}}">{{post.title}}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="/posts">More</a>
     </div>
 </section>
